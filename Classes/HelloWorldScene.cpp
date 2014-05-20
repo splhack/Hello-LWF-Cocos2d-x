@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "lwf_cocos2dx.h"
 
 USING_NS_CC;
 
@@ -71,6 +72,20 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
+
+    // add a lwf
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	const char *path = "sample3_max_optimized/sample3_max_optimized.lwf";
+#else
+	const char *path = "sample3_max_optimized.lwf";
+#endif
+    auto lwfNode = LWFNode::create(path);
+	lwfNode->lwf->AddEventHandler("done", [=](LWF::Movie *, LWF::Button *){
+		lwfNode->lwf->GotoAndPlayMovie("_root", 1);
+	});
+    lwfNode->setPosition(origin);
+    lwfNode->lwf->FitForHeight(visibleSize.width, visibleSize.height);
+    this->addChild(lwfNode);
     
     return true;
 }

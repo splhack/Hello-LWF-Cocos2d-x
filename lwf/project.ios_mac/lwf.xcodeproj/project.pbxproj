@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		819096E418E2259A003E0BB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819096E318E2259A003E0BB0 /* Foundation.framework */; };
+		81F1DF7A18E22D9000FA78E5 /* lwf_cocos2dx.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3318E22D9000FA78E5 /* lwf_cocos2dx.h */; };
+		81F1DF7B18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3418E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp */; };
+		81F1DF7C18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3418E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp */; };
+		81F1DF7D18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3518E22D9000FA78E5 /* lwf_cocos2dx_bitmap.h */; };
+		81F1DF7E18E22D9000FA78E5 /* lwf_cocos2dx_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3618E22D9000FA78E5 /* lwf_cocos2dx_factory.cpp */; };
+		81F1DF7F18E22D9000FA78E5 /* lwf_cocos2dx_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3618E22D9000FA78E5 /* lwf_cocos2dx_factory.cpp */; };
+		81F1DF8018E22D9000FA78E5 /* lwf_cocos2dx_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3718E22D9000FA78E5 /* lwf_cocos2dx_factory.h */; };
+		81F1DF8118E22D9000FA78E5 /* lwf_cocos2dx_node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3818E22D9000FA78E5 /* lwf_cocos2dx_node.cpp */; };
+		81F1DF8218E22D9000FA78E5 /* lwf_cocos2dx_node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3818E22D9000FA78E5 /* lwf_cocos2dx_node.cpp */; };
+		81F1DF8318E22D9000FA78E5 /* lwf_cocos2dx_node.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3918E22D9000FA78E5 /* lwf_cocos2dx_node.h */; };
+		81F1DF8418E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3A18E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp */; };
+		81F1DF8518E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3A18E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp */; };
+		81F1DF8618E22D9000FA78E5 /* lwf_cocos2dx_particle.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3B18E22D9000FA78E5 /* lwf_cocos2dx_particle.h */; };
+		81F1DF8718E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3C18E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.cpp */; };
+		81F1DF8818E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3C18E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.cpp */; };
+		81F1DF8918E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3D18E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.h */; };
+		81F1DF8A18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3E18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp */; };
+		81F1DF8B18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3E18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp */; };
+		81F1DF8C18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3F18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.h */; };
+		81F1DF8D18E22D9000FA78E5 /* lwf_cocos2dx_textttf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4018E22D9000FA78E5 /* lwf_cocos2dx_textttf.cpp */; };
+		81F1DF8E18E22D9000FA78E5 /* lwf_cocos2dx_textttf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4018E22D9000FA78E5 /* lwf_cocos2dx_textttf.cpp */; };
+		81F1DF8F18E22D9000FA78E5 /* lwf_cocos2dx_textttf.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF4118E22D9000FA78E5 /* lwf_cocos2dx_textttf.h */; };
+		81F1DF9018E22D9000FA78E5 /* lwf.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF4318E22D9000FA78E5 /* lwf.h */; };
+		81F1DF9118E22D9000FA78E5 /* lwf_animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4418E22D9000FA78E5 /* lwf_animation.cpp */; };
+		81F1DF9218E22D9000FA78E5 /* lwf_animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4418E22D9000FA78E5 /* lwf_animation.cpp */; };
+		81F1DF9318E22D9000FA78E5 /* lwf_animation.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF4518E22D9000FA78E5 /* lwf_animation.h */; };
+		81F1DF9418E22D9000FA78E5 /* lwf_bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4618E22D9000FA78E5 /* lwf_bitmap.cpp */; };
+		81F1DF9518E22D9000FA78E5 /* lwf_bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4618E22D9000FA78E5 /* lwf_bitmap.cpp */; };
+		81F1DF9618E22D9000FA78E5 /* lwf_bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF4718E22D9000FA78E5 /* lwf_bitmap.h */; };
+		81F1DF9718E22D9000FA78E5 /* lwf_bitmapex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4818E22D9000FA78E5 /* lwf_bitmapex.cpp */; };
+		81F1DF9818E22D9000FA78E5 /* lwf_bitmapex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4818E22D9000FA78E5 /* lwf_bitmapex.cpp */; };
+		81F1DF9918E22D9000FA78E5 /* lwf_bitmapex.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF4918E22D9000FA78E5 /* lwf_bitmapex.h */; };
+		81F1DF9A18E22D9000FA78E5 /* lwf_button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4A18E22D9000FA78E5 /* lwf_button.cpp */; };
+		81F1DF9B18E22D9000FA78E5 /* lwf_button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4A18E22D9000FA78E5 /* lwf_button.cpp */; };
+		81F1DF9C18E22D9000FA78E5 /* lwf_button.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF4B18E22D9000FA78E5 /* lwf_button.h */; };
+		81F1DF9D18E22D9000FA78E5 /* lwf_compat.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF4C18E22D9000FA78E5 /* lwf_compat.h */; };
+		81F1DF9E18E22D9000FA78E5 /* lwf_core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4D18E22D9000FA78E5 /* lwf_core.cpp */; };
+		81F1DF9F18E22D9000FA78E5 /* lwf_core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4D18E22D9000FA78E5 /* lwf_core.cpp */; };
+		81F1DFA018E22D9000FA78E5 /* lwf_core.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF4E18E22D9000FA78E5 /* lwf_core.h */; };
+		81F1DFA118E22D9000FA78E5 /* lwf_coredata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4F18E22D9000FA78E5 /* lwf_coredata.cpp */; };
+		81F1DFA218E22D9000FA78E5 /* lwf_coredata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF4F18E22D9000FA78E5 /* lwf_coredata.cpp */; };
+		81F1DFA318E22D9000FA78E5 /* lwf_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5018E22D9000FA78E5 /* lwf_data.cpp */; };
+		81F1DFA418E22D9000FA78E5 /* lwf_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5018E22D9000FA78E5 /* lwf_data.cpp */; };
+		81F1DFA518E22D9000FA78E5 /* lwf_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF5118E22D9000FA78E5 /* lwf_data.h */; };
+		81F1DFA618E22D9000FA78E5 /* lwf_event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5218E22D9000FA78E5 /* lwf_event.cpp */; };
+		81F1DFA718E22D9000FA78E5 /* lwf_event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5218E22D9000FA78E5 /* lwf_event.cpp */; };
+		81F1DFA818E22D9000FA78E5 /* lwf_eventbutton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5318E22D9000FA78E5 /* lwf_eventbutton.cpp */; };
+		81F1DFA918E22D9000FA78E5 /* lwf_eventbutton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5318E22D9000FA78E5 /* lwf_eventbutton.cpp */; };
+		81F1DFAA18E22D9000FA78E5 /* lwf_eventbutton.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF5418E22D9000FA78E5 /* lwf_eventbutton.h */; };
+		81F1DFAB18E22D9000FA78E5 /* lwf_eventmovie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5518E22D9000FA78E5 /* lwf_eventmovie.cpp */; };
+		81F1DFAC18E22D9000FA78E5 /* lwf_eventmovie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5518E22D9000FA78E5 /* lwf_eventmovie.cpp */; };
+		81F1DFAD18E22D9000FA78E5 /* lwf_eventmovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF5618E22D9000FA78E5 /* lwf_eventmovie.h */; };
+		81F1DFAE18E22D9000FA78E5 /* lwf_format.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5718E22D9000FA78E5 /* lwf_format.cpp */; };
+		81F1DFAF18E22D9000FA78E5 /* lwf_format.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5718E22D9000FA78E5 /* lwf_format.cpp */; };
+		81F1DFB018E22D9000FA78E5 /* lwf_format.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF5818E22D9000FA78E5 /* lwf_format.h */; };
+		81F1DFB118E22D9000FA78E5 /* lwf_graphic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5918E22D9000FA78E5 /* lwf_graphic.cpp */; };
+		81F1DFB218E22D9000FA78E5 /* lwf_graphic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5918E22D9000FA78E5 /* lwf_graphic.cpp */; };
+		81F1DFB318E22D9000FA78E5 /* lwf_graphic.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF5A18E22D9000FA78E5 /* lwf_graphic.h */; };
+		81F1DFB418E22D9000FA78E5 /* lwf_input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5B18E22D9000FA78E5 /* lwf_input.cpp */; };
+		81F1DFB518E22D9000FA78E5 /* lwf_input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5B18E22D9000FA78E5 /* lwf_input.cpp */; };
+		81F1DFB618E22D9000FA78E5 /* lwf_iobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5C18E22D9000FA78E5 /* lwf_iobject.cpp */; };
+		81F1DFB718E22D9000FA78E5 /* lwf_iobject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5C18E22D9000FA78E5 /* lwf_iobject.cpp */; };
+		81F1DFB818E22D9000FA78E5 /* lwf_iobject.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF5D18E22D9000FA78E5 /* lwf_iobject.h */; };
+		81F1DFB918E22D9000FA78E5 /* lwf_lwfcontainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5E18E22D9000FA78E5 /* lwf_lwfcontainer.cpp */; };
+		81F1DFBA18E22D9000FA78E5 /* lwf_lwfcontainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF5E18E22D9000FA78E5 /* lwf_lwfcontainer.cpp */; };
+		81F1DFBB18E22D9000FA78E5 /* lwf_lwfcontainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF5F18E22D9000FA78E5 /* lwf_lwfcontainer.h */; };
+		81F1DFBC18E22D9000FA78E5 /* lwf_movie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6018E22D9000FA78E5 /* lwf_movie.cpp */; };
+		81F1DFBD18E22D9000FA78E5 /* lwf_movie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6018E22D9000FA78E5 /* lwf_movie.cpp */; };
+		81F1DFBE18E22D9000FA78E5 /* lwf_movie.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF6118E22D9000FA78E5 /* lwf_movie.h */; };
+		81F1DFBF18E22D9000FA78E5 /* lwf_movieat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6218E22D9000FA78E5 /* lwf_movieat.cpp */; };
+		81F1DFC018E22D9000FA78E5 /* lwf_movieat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6218E22D9000FA78E5 /* lwf_movieat.cpp */; };
+		81F1DFC118E22D9000FA78E5 /* lwf_movieop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6318E22D9000FA78E5 /* lwf_movieop.cpp */; };
+		81F1DFC218E22D9000FA78E5 /* lwf_movieop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6318E22D9000FA78E5 /* lwf_movieop.cpp */; };
+		81F1DFC318E22D9000FA78E5 /* lwf_movieprop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6418E22D9000FA78E5 /* lwf_movieprop.cpp */; };
+		81F1DFC418E22D9000FA78E5 /* lwf_movieprop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6418E22D9000FA78E5 /* lwf_movieprop.cpp */; };
+		81F1DFC518E22D9000FA78E5 /* lwf_object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6518E22D9000FA78E5 /* lwf_object.cpp */; };
+		81F1DFC618E22D9000FA78E5 /* lwf_object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6518E22D9000FA78E5 /* lwf_object.cpp */; };
+		81F1DFC718E22D9000FA78E5 /* lwf_object.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF6618E22D9000FA78E5 /* lwf_object.h */; };
+		81F1DFC818E22D9000FA78E5 /* lwf_particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6718E22D9000FA78E5 /* lwf_particle.cpp */; };
+		81F1DFC918E22D9000FA78E5 /* lwf_particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6718E22D9000FA78E5 /* lwf_particle.cpp */; };
+		81F1DFCA18E22D9000FA78E5 /* lwf_particle.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF6818E22D9000FA78E5 /* lwf_particle.h */; };
+		81F1DFCB18E22D9000FA78E5 /* lwf_programobj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6918E22D9000FA78E5 /* lwf_programobj.cpp */; };
+		81F1DFCC18E22D9000FA78E5 /* lwf_programobj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6918E22D9000FA78E5 /* lwf_programobj.cpp */; };
+		81F1DFCD18E22D9000FA78E5 /* lwf_programobj.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF6A18E22D9000FA78E5 /* lwf_programobj.h */; };
+		81F1DFCE18E22D9000FA78E5 /* lwf_property.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6B18E22D9000FA78E5 /* lwf_property.cpp */; };
+		81F1DFCF18E22D9000FA78E5 /* lwf_property.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6B18E22D9000FA78E5 /* lwf_property.cpp */; };
+		81F1DFD018E22D9000FA78E5 /* lwf_property.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF6C18E22D9000FA78E5 /* lwf_property.h */; };
+		81F1DFD118E22D9000FA78E5 /* lwf_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF6D18E22D9000FA78E5 /* lwf_renderer.h */; };
+		81F1DFD218E22D9000FA78E5 /* lwf_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6E18E22D9000FA78E5 /* lwf_text.cpp */; };
+		81F1DFD318E22D9000FA78E5 /* lwf_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF6E18E22D9000FA78E5 /* lwf_text.cpp */; };
+		81F1DFD418E22D9000FA78E5 /* lwf_text.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF6F18E22D9000FA78E5 /* lwf_text.h */; };
+		81F1DFD518E22D9000FA78E5 /* lwf_type.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF7018E22D9000FA78E5 /* lwf_type.h */; };
+		81F1DFD618E22D9000FA78E5 /* lwf_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF7118E22D9000FA78E5 /* lwf_utility.cpp */; };
+		81F1DFD718E22D9000FA78E5 /* lwf_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF7118E22D9000FA78E5 /* lwf_utility.cpp */; };
+		81F1DFD818E22D9000FA78E5 /* lwf_utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF7218E22D9000FA78E5 /* lwf_utility.h */; };
+		81F1DFD918E22D9000FA78E5 /* Alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF7518E22D9000FA78E5 /* Alloc.c */; };
+		81F1DFDA18E22D9000FA78E5 /* Alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF7518E22D9000FA78E5 /* Alloc.c */; };
+		81F1DFDB18E22D9000FA78E5 /* Alloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF7618E22D9000FA78E5 /* Alloc.h */; };
+		81F1DFDC18E22D9000FA78E5 /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF7718E22D9000FA78E5 /* LzmaDec.c */; };
+		81F1DFDD18E22D9000FA78E5 /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF7718E22D9000FA78E5 /* LzmaDec.c */; };
+		81F1DFDE18E22D9000FA78E5 /* LzmaDec.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF7818E22D9000FA78E5 /* LzmaDec.h */; };
+		81F1DFDF18E22D9000FA78E5 /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF7918E22D9000FA78E5 /* Types.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		819096DE18E2259A003E0BB0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		819096E018E2259A003E0BB0 /* liblwf iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblwf iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		819096E318E2259A003E0BB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		819096F418E2259A003E0BB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8190970D18E2264A003E0BB0 /* liblwf Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblwf Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F1DF3318E22D9000FA78E5 /* lwf_cocos2dx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx.h; sourceTree = "<group>"; };
+		81F1DF3418E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_cocos2dx_bitmap.cpp; sourceTree = "<group>"; };
+		81F1DF3518E22D9000FA78E5 /* lwf_cocos2dx_bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx_bitmap.h; sourceTree = "<group>"; };
+		81F1DF3618E22D9000FA78E5 /* lwf_cocos2dx_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_cocos2dx_factory.cpp; sourceTree = "<group>"; };
+		81F1DF3718E22D9000FA78E5 /* lwf_cocos2dx_factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx_factory.h; sourceTree = "<group>"; };
+		81F1DF3818E22D9000FA78E5 /* lwf_cocos2dx_node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_cocos2dx_node.cpp; sourceTree = "<group>"; };
+		81F1DF3918E22D9000FA78E5 /* lwf_cocos2dx_node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx_node.h; sourceTree = "<group>"; };
+		81F1DF3A18E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_cocos2dx_particle.cpp; sourceTree = "<group>"; };
+		81F1DF3B18E22D9000FA78E5 /* lwf_cocos2dx_particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx_particle.h; sourceTree = "<group>"; };
+		81F1DF3C18E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_cocos2dx_resourcecache.cpp; sourceTree = "<group>"; };
+		81F1DF3D18E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx_resourcecache.h; sourceTree = "<group>"; };
+		81F1DF3E18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_cocos2dx_textbmfont.cpp; sourceTree = "<group>"; };
+		81F1DF3F18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx_textbmfont.h; sourceTree = "<group>"; };
+		81F1DF4018E22D9000FA78E5 /* lwf_cocos2dx_textttf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_cocos2dx_textttf.cpp; sourceTree = "<group>"; };
+		81F1DF4118E22D9000FA78E5 /* lwf_cocos2dx_textttf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx_textttf.h; sourceTree = "<group>"; };
+		81F1DF4318E22D9000FA78E5 /* lwf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf.h; sourceTree = "<group>"; };
+		81F1DF4418E22D9000FA78E5 /* lwf_animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_animation.cpp; sourceTree = "<group>"; };
+		81F1DF4518E22D9000FA78E5 /* lwf_animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_animation.h; sourceTree = "<group>"; };
+		81F1DF4618E22D9000FA78E5 /* lwf_bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_bitmap.cpp; sourceTree = "<group>"; };
+		81F1DF4718E22D9000FA78E5 /* lwf_bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_bitmap.h; sourceTree = "<group>"; };
+		81F1DF4818E22D9000FA78E5 /* lwf_bitmapex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_bitmapex.cpp; sourceTree = "<group>"; };
+		81F1DF4918E22D9000FA78E5 /* lwf_bitmapex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_bitmapex.h; sourceTree = "<group>"; };
+		81F1DF4A18E22D9000FA78E5 /* lwf_button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_button.cpp; sourceTree = "<group>"; };
+		81F1DF4B18E22D9000FA78E5 /* lwf_button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_button.h; sourceTree = "<group>"; };
+		81F1DF4C18E22D9000FA78E5 /* lwf_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_compat.h; sourceTree = "<group>"; };
+		81F1DF4D18E22D9000FA78E5 /* lwf_core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_core.cpp; sourceTree = "<group>"; };
+		81F1DF4E18E22D9000FA78E5 /* lwf_core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_core.h; sourceTree = "<group>"; };
+		81F1DF4F18E22D9000FA78E5 /* lwf_coredata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_coredata.cpp; sourceTree = "<group>"; };
+		81F1DF5018E22D9000FA78E5 /* lwf_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_data.cpp; sourceTree = "<group>"; };
+		81F1DF5118E22D9000FA78E5 /* lwf_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_data.h; sourceTree = "<group>"; };
+		81F1DF5218E22D9000FA78E5 /* lwf_event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_event.cpp; sourceTree = "<group>"; };
+		81F1DF5318E22D9000FA78E5 /* lwf_eventbutton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_eventbutton.cpp; sourceTree = "<group>"; };
+		81F1DF5418E22D9000FA78E5 /* lwf_eventbutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_eventbutton.h; sourceTree = "<group>"; };
+		81F1DF5518E22D9000FA78E5 /* lwf_eventmovie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_eventmovie.cpp; sourceTree = "<group>"; };
+		81F1DF5618E22D9000FA78E5 /* lwf_eventmovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_eventmovie.h; sourceTree = "<group>"; };
+		81F1DF5718E22D9000FA78E5 /* lwf_format.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_format.cpp; sourceTree = "<group>"; };
+		81F1DF5818E22D9000FA78E5 /* lwf_format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_format.h; sourceTree = "<group>"; };
+		81F1DF5918E22D9000FA78E5 /* lwf_graphic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_graphic.cpp; sourceTree = "<group>"; };
+		81F1DF5A18E22D9000FA78E5 /* lwf_graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_graphic.h; sourceTree = "<group>"; };
+		81F1DF5B18E22D9000FA78E5 /* lwf_input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_input.cpp; sourceTree = "<group>"; };
+		81F1DF5C18E22D9000FA78E5 /* lwf_iobject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_iobject.cpp; sourceTree = "<group>"; };
+		81F1DF5D18E22D9000FA78E5 /* lwf_iobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_iobject.h; sourceTree = "<group>"; };
+		81F1DF5E18E22D9000FA78E5 /* lwf_lwfcontainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_lwfcontainer.cpp; sourceTree = "<group>"; };
+		81F1DF5F18E22D9000FA78E5 /* lwf_lwfcontainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_lwfcontainer.h; sourceTree = "<group>"; };
+		81F1DF6018E22D9000FA78E5 /* lwf_movie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_movie.cpp; sourceTree = "<group>"; };
+		81F1DF6118E22D9000FA78E5 /* lwf_movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_movie.h; sourceTree = "<group>"; };
+		81F1DF6218E22D9000FA78E5 /* lwf_movieat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_movieat.cpp; sourceTree = "<group>"; };
+		81F1DF6318E22D9000FA78E5 /* lwf_movieop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_movieop.cpp; sourceTree = "<group>"; };
+		81F1DF6418E22D9000FA78E5 /* lwf_movieprop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_movieprop.cpp; sourceTree = "<group>"; };
+		81F1DF6518E22D9000FA78E5 /* lwf_object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_object.cpp; sourceTree = "<group>"; };
+		81F1DF6618E22D9000FA78E5 /* lwf_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_object.h; sourceTree = "<group>"; };
+		81F1DF6718E22D9000FA78E5 /* lwf_particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_particle.cpp; sourceTree = "<group>"; };
+		81F1DF6818E22D9000FA78E5 /* lwf_particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_particle.h; sourceTree = "<group>"; };
+		81F1DF6918E22D9000FA78E5 /* lwf_programobj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_programobj.cpp; sourceTree = "<group>"; };
+		81F1DF6A18E22D9000FA78E5 /* lwf_programobj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_programobj.h; sourceTree = "<group>"; };
+		81F1DF6B18E22D9000FA78E5 /* lwf_property.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_property.cpp; sourceTree = "<group>"; };
+		81F1DF6C18E22D9000FA78E5 /* lwf_property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_property.h; sourceTree = "<group>"; };
+		81F1DF6D18E22D9000FA78E5 /* lwf_renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_renderer.h; sourceTree = "<group>"; };
+		81F1DF6E18E22D9000FA78E5 /* lwf_text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_text.cpp; sourceTree = "<group>"; };
+		81F1DF6F18E22D9000FA78E5 /* lwf_text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_text.h; sourceTree = "<group>"; };
+		81F1DF7018E22D9000FA78E5 /* lwf_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_type.h; sourceTree = "<group>"; };
+		81F1DF7118E22D9000FA78E5 /* lwf_utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_utility.cpp; sourceTree = "<group>"; };
+		81F1DF7218E22D9000FA78E5 /* lwf_utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_utility.h; sourceTree = "<group>"; };
+		81F1DF7518E22D9000FA78E5 /* Alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Alloc.c; sourceTree = "<group>"; };
+		81F1DF7618E22D9000FA78E5 /* Alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alloc.h; sourceTree = "<group>"; };
+		81F1DF7718E22D9000FA78E5 /* LzmaDec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LzmaDec.c; sourceTree = "<group>"; };
+		81F1DF7818E22D9000FA78E5 /* LzmaDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzmaDec.h; sourceTree = "<group>"; };
+		81F1DF7918E22D9000FA78E5 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		819096DD18E2259A003E0BB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				819096E418E2259A003E0BB0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8190970A18E2264A003E0BB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		819096D718E2259A003E0BB0 = {
+			isa = PBXGroup;
+			children = (
+				81F1DF3118E22D7600FA78E5 /* Sources */,
+				819096E218E2259A003E0BB0 /* Frameworks */,
+				819096E118E2259A003E0BB0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		819096E118E2259A003E0BB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				819096E018E2259A003E0BB0 /* liblwf iOS.a */,
+				8190970D18E2264A003E0BB0 /* liblwf Mac.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		819096E218E2259A003E0BB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				819096E318E2259A003E0BB0 /* Foundation.framework */,
+				819096F418E2259A003E0BB0 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81F1DF3118E22D7600FA78E5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				81F1DF3218E22D9000FA78E5 /* cocos2dx */,
+				81F1DF4218E22D9000FA78E5 /* core */,
+				81F1DF7318E22D9000FA78E5 /* supports */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		81F1DF3218E22D9000FA78E5 /* cocos2dx */ = {
+			isa = PBXGroup;
+			children = (
+				81F1DF3318E22D9000FA78E5 /* lwf_cocos2dx.h */,
+				81F1DF3418E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp */,
+				81F1DF3518E22D9000FA78E5 /* lwf_cocos2dx_bitmap.h */,
+				81F1DF3618E22D9000FA78E5 /* lwf_cocos2dx_factory.cpp */,
+				81F1DF3718E22D9000FA78E5 /* lwf_cocos2dx_factory.h */,
+				81F1DF3818E22D9000FA78E5 /* lwf_cocos2dx_node.cpp */,
+				81F1DF3918E22D9000FA78E5 /* lwf_cocos2dx_node.h */,
+				81F1DF3A18E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp */,
+				81F1DF3B18E22D9000FA78E5 /* lwf_cocos2dx_particle.h */,
+				81F1DF3C18E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.cpp */,
+				81F1DF3D18E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.h */,
+				81F1DF3E18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp */,
+				81F1DF3F18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.h */,
+				81F1DF4018E22D9000FA78E5 /* lwf_cocos2dx_textttf.cpp */,
+				81F1DF4118E22D9000FA78E5 /* lwf_cocos2dx_textttf.h */,
+			);
+			name = cocos2dx;
+			path = ../cplusplus/cocos2dx;
+			sourceTree = "<group>";
+		};
+		81F1DF4218E22D9000FA78E5 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				81F1DF4318E22D9000FA78E5 /* lwf.h */,
+				81F1DF4418E22D9000FA78E5 /* lwf_animation.cpp */,
+				81F1DF4518E22D9000FA78E5 /* lwf_animation.h */,
+				81F1DF4618E22D9000FA78E5 /* lwf_bitmap.cpp */,
+				81F1DF4718E22D9000FA78E5 /* lwf_bitmap.h */,
+				81F1DF4818E22D9000FA78E5 /* lwf_bitmapex.cpp */,
+				81F1DF4918E22D9000FA78E5 /* lwf_bitmapex.h */,
+				81F1DF4A18E22D9000FA78E5 /* lwf_button.cpp */,
+				81F1DF4B18E22D9000FA78E5 /* lwf_button.h */,
+				81F1DF4C18E22D9000FA78E5 /* lwf_compat.h */,
+				81F1DF4D18E22D9000FA78E5 /* lwf_core.cpp */,
+				81F1DF4E18E22D9000FA78E5 /* lwf_core.h */,
+				81F1DF4F18E22D9000FA78E5 /* lwf_coredata.cpp */,
+				81F1DF5018E22D9000FA78E5 /* lwf_data.cpp */,
+				81F1DF5118E22D9000FA78E5 /* lwf_data.h */,
+				81F1DF5218E22D9000FA78E5 /* lwf_event.cpp */,
+				81F1DF5318E22D9000FA78E5 /* lwf_eventbutton.cpp */,
+				81F1DF5418E22D9000FA78E5 /* lwf_eventbutton.h */,
+				81F1DF5518E22D9000FA78E5 /* lwf_eventmovie.cpp */,
+				81F1DF5618E22D9000FA78E5 /* lwf_eventmovie.h */,
+				81F1DF5718E22D9000FA78E5 /* lwf_format.cpp */,
+				81F1DF5818E22D9000FA78E5 /* lwf_format.h */,
+				81F1DF5918E22D9000FA78E5 /* lwf_graphic.cpp */,
+				81F1DF5A18E22D9000FA78E5 /* lwf_graphic.h */,
+				81F1DF5B18E22D9000FA78E5 /* lwf_input.cpp */,
+				81F1DF5C18E22D9000FA78E5 /* lwf_iobject.cpp */,
+				81F1DF5D18E22D9000FA78E5 /* lwf_iobject.h */,
+				81F1DF5E18E22D9000FA78E5 /* lwf_lwfcontainer.cpp */,
+				81F1DF5F18E22D9000FA78E5 /* lwf_lwfcontainer.h */,
+				81F1DF6018E22D9000FA78E5 /* lwf_movie.cpp */,
+				81F1DF6118E22D9000FA78E5 /* lwf_movie.h */,
+				81F1DF6218E22D9000FA78E5 /* lwf_movieat.cpp */,
+				81F1DF6318E22D9000FA78E5 /* lwf_movieop.cpp */,
+				81F1DF6418E22D9000FA78E5 /* lwf_movieprop.cpp */,
+				81F1DF6518E22D9000FA78E5 /* lwf_object.cpp */,
+				81F1DF6618E22D9000FA78E5 /* lwf_object.h */,
+				81F1DF6718E22D9000FA78E5 /* lwf_particle.cpp */,
+				81F1DF6818E22D9000FA78E5 /* lwf_particle.h */,
+				81F1DF6918E22D9000FA78E5 /* lwf_programobj.cpp */,
+				81F1DF6A18E22D9000FA78E5 /* lwf_programobj.h */,
+				81F1DF6B18E22D9000FA78E5 /* lwf_property.cpp */,
+				81F1DF6C18E22D9000FA78E5 /* lwf_property.h */,
+				81F1DF6D18E22D9000FA78E5 /* lwf_renderer.h */,
+				81F1DF6E18E22D9000FA78E5 /* lwf_text.cpp */,
+				81F1DF6F18E22D9000FA78E5 /* lwf_text.h */,
+				81F1DF7018E22D9000FA78E5 /* lwf_type.h */,
+				81F1DF7118E22D9000FA78E5 /* lwf_utility.cpp */,
+				81F1DF7218E22D9000FA78E5 /* lwf_utility.h */,
+			);
+			name = core;
+			path = ../cplusplus/core;
+			sourceTree = "<group>";
+		};
+		81F1DF7318E22D9000FA78E5 /* supports */ = {
+			isa = PBXGroup;
+			children = (
+				81F1DF7418E22D9000FA78E5 /* lzma */,
+			);
+			name = supports;
+			path = ../cplusplus/supports;
+			sourceTree = "<group>";
+		};
+		81F1DF7418E22D9000FA78E5 /* lzma */ = {
+			isa = PBXGroup;
+			children = (
+				81F1DF7518E22D9000FA78E5 /* Alloc.c */,
+				81F1DF7618E22D9000FA78E5 /* Alloc.h */,
+				81F1DF7718E22D9000FA78E5 /* LzmaDec.c */,
+				81F1DF7818E22D9000FA78E5 /* LzmaDec.h */,
+				81F1DF7918E22D9000FA78E5 /* Types.h */,
+			);
+			path = lzma;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8190970B18E2264A003E0BB0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F1DFAD18E22D9000FA78E5 /* lwf_eventmovie.h in Headers */,
+				81F1DFC718E22D9000FA78E5 /* lwf_object.h in Headers */,
+				81F1DFDE18E22D9000FA78E5 /* LzmaDec.h in Headers */,
+				81F1DF8918E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.h in Headers */,
+				81F1DFBB18E22D9000FA78E5 /* lwf_lwfcontainer.h in Headers */,
+				81F1DF9618E22D9000FA78E5 /* lwf_bitmap.h in Headers */,
+				81F1DFD818E22D9000FA78E5 /* lwf_utility.h in Headers */,
+				81F1DFCA18E22D9000FA78E5 /* lwf_particle.h in Headers */,
+				81F1DFA518E22D9000FA78E5 /* lwf_data.h in Headers */,
+				81F1DFDB18E22D9000FA78E5 /* Alloc.h in Headers */,
+				81F1DFA018E22D9000FA78E5 /* lwf_core.h in Headers */,
+				81F1DFB818E22D9000FA78E5 /* lwf_iobject.h in Headers */,
+				81F1DFBE18E22D9000FA78E5 /* lwf_movie.h in Headers */,
+				81F1DF8C18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.h in Headers */,
+				81F1DF8018E22D9000FA78E5 /* lwf_cocos2dx_factory.h in Headers */,
+				81F1DF9318E22D9000FA78E5 /* lwf_animation.h in Headers */,
+				81F1DF9018E22D9000FA78E5 /* lwf.h in Headers */,
+				81F1DF9918E22D9000FA78E5 /* lwf_bitmapex.h in Headers */,
+				81F1DF8F18E22D9000FA78E5 /* lwf_cocos2dx_textttf.h in Headers */,
+				81F1DF9C18E22D9000FA78E5 /* lwf_button.h in Headers */,
+				81F1DF7D18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.h in Headers */,
+				81F1DFB318E22D9000FA78E5 /* lwf_graphic.h in Headers */,
+				81F1DF7A18E22D9000FA78E5 /* lwf_cocos2dx.h in Headers */,
+				81F1DF8318E22D9000FA78E5 /* lwf_cocos2dx_node.h in Headers */,
+				81F1DFDF18E22D9000FA78E5 /* Types.h in Headers */,
+				81F1DFCD18E22D9000FA78E5 /* lwf_programobj.h in Headers */,
+				81F1DFD518E22D9000FA78E5 /* lwf_type.h in Headers */,
+				81F1DFD418E22D9000FA78E5 /* lwf_text.h in Headers */,
+				81F1DFB018E22D9000FA78E5 /* lwf_format.h in Headers */,
+				81F1DF9D18E22D9000FA78E5 /* lwf_compat.h in Headers */,
+				81F1DFAA18E22D9000FA78E5 /* lwf_eventbutton.h in Headers */,
+				81F1DFD018E22D9000FA78E5 /* lwf_property.h in Headers */,
+				81F1DF8618E22D9000FA78E5 /* lwf_cocos2dx_particle.h in Headers */,
+				81F1DFD118E22D9000FA78E5 /* lwf_renderer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		819096DF18E2259A003E0BB0 /* lwf iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8190970318E2259A003E0BB0 /* Build configuration list for PBXNativeTarget "lwf iOS" */;
+			buildPhases = (
+				819096DC18E2259A003E0BB0 /* Sources */,
+				819096DD18E2259A003E0BB0 /* Frameworks */,
+				819096DE18E2259A003E0BB0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "lwf iOS";
+			productName = LWF;
+			productReference = 819096E018E2259A003E0BB0 /* liblwf iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8190970C18E2264A003E0BB0 /* lwf Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8190970E18E2264A003E0BB0 /* Build configuration list for PBXNativeTarget "lwf Mac" */;
+			buildPhases = (
+				8190970918E2264A003E0BB0 /* Sources */,
+				8190970A18E2264A003E0BB0 /* Frameworks */,
+				8190970B18E2264A003E0BB0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "lwf Mac";
+			productName = "lwf Mac";
+			productReference = 8190970D18E2264A003E0BB0 /* liblwf Mac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		819096D818E2259A003E0BB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 819096DB18E2259A003E0BB0 /* Build configuration list for PBXProject "lwf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 819096D718E2259A003E0BB0;
+			productRefGroup = 819096E118E2259A003E0BB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8190970C18E2264A003E0BB0 /* lwf Mac */,
+				819096DF18E2259A003E0BB0 /* lwf iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		819096DC18E2259A003E0BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F1DF8818E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.cpp in Sources */,
+				81F1DFC918E22D9000FA78E5 /* lwf_particle.cpp in Sources */,
+				81F1DF8218E22D9000FA78E5 /* lwf_cocos2dx_node.cpp in Sources */,
+				81F1DFA718E22D9000FA78E5 /* lwf_event.cpp in Sources */,
+				81F1DF9218E22D9000FA78E5 /* lwf_animation.cpp in Sources */,
+				81F1DF7C18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */,
+				81F1DFCC18E22D9000FA78E5 /* lwf_programobj.cpp in Sources */,
+				81F1DF8B18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp in Sources */,
+				81F1DFCF18E22D9000FA78E5 /* lwf_property.cpp in Sources */,
+				81F1DFDA18E22D9000FA78E5 /* Alloc.c in Sources */,
+				81F1DF8518E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp in Sources */,
+				81F1DFAC18E22D9000FA78E5 /* lwf_eventmovie.cpp in Sources */,
+				81F1DF9F18E22D9000FA78E5 /* lwf_core.cpp in Sources */,
+				81F1DFA218E22D9000FA78E5 /* lwf_coredata.cpp in Sources */,
+				81F1DFDD18E22D9000FA78E5 /* LzmaDec.c in Sources */,
+				81F1DFB218E22D9000FA78E5 /* lwf_graphic.cpp in Sources */,
+				81F1DF9518E22D9000FA78E5 /* lwf_bitmap.cpp in Sources */,
+				81F1DFA918E22D9000FA78E5 /* lwf_eventbutton.cpp in Sources */,
+				81F1DFBA18E22D9000FA78E5 /* lwf_lwfcontainer.cpp in Sources */,
+				81F1DFAF18E22D9000FA78E5 /* lwf_format.cpp in Sources */,
+				81F1DFBD18E22D9000FA78E5 /* lwf_movie.cpp in Sources */,
+				81F1DFC218E22D9000FA78E5 /* lwf_movieop.cpp in Sources */,
+				81F1DFD318E22D9000FA78E5 /* lwf_text.cpp in Sources */,
+				81F1DFA418E22D9000FA78E5 /* lwf_data.cpp in Sources */,
+				81F1DF7F18E22D9000FA78E5 /* lwf_cocos2dx_factory.cpp in Sources */,
+				81F1DF8E18E22D9000FA78E5 /* lwf_cocos2dx_textttf.cpp in Sources */,
+				81F1DF9B18E22D9000FA78E5 /* lwf_button.cpp in Sources */,
+				81F1DFB518E22D9000FA78E5 /* lwf_input.cpp in Sources */,
+				81F1DFC018E22D9000FA78E5 /* lwf_movieat.cpp in Sources */,
+				81F1DFC618E22D9000FA78E5 /* lwf_object.cpp in Sources */,
+				81F1DFD718E22D9000FA78E5 /* lwf_utility.cpp in Sources */,
+				81F1DFC418E22D9000FA78E5 /* lwf_movieprop.cpp in Sources */,
+				81F1DF9818E22D9000FA78E5 /* lwf_bitmapex.cpp in Sources */,
+				81F1DFB718E22D9000FA78E5 /* lwf_iobject.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8190970918E2264A003E0BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F1DF8718E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.cpp in Sources */,
+				81F1DFC818E22D9000FA78E5 /* lwf_particle.cpp in Sources */,
+				81F1DF8118E22D9000FA78E5 /* lwf_cocos2dx_node.cpp in Sources */,
+				81F1DFA618E22D9000FA78E5 /* lwf_event.cpp in Sources */,
+				81F1DF9118E22D9000FA78E5 /* lwf_animation.cpp in Sources */,
+				81F1DF7B18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */,
+				81F1DFCB18E22D9000FA78E5 /* lwf_programobj.cpp in Sources */,
+				81F1DF8A18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp in Sources */,
+				81F1DFCE18E22D9000FA78E5 /* lwf_property.cpp in Sources */,
+				81F1DFD918E22D9000FA78E5 /* Alloc.c in Sources */,
+				81F1DF8418E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp in Sources */,
+				81F1DFAB18E22D9000FA78E5 /* lwf_eventmovie.cpp in Sources */,
+				81F1DF9E18E22D9000FA78E5 /* lwf_core.cpp in Sources */,
+				81F1DFA118E22D9000FA78E5 /* lwf_coredata.cpp in Sources */,
+				81F1DFDC18E22D9000FA78E5 /* LzmaDec.c in Sources */,
+				81F1DFB118E22D9000FA78E5 /* lwf_graphic.cpp in Sources */,
+				81F1DF9418E22D9000FA78E5 /* lwf_bitmap.cpp in Sources */,
+				81F1DFA818E22D9000FA78E5 /* lwf_eventbutton.cpp in Sources */,
+				81F1DFB918E22D9000FA78E5 /* lwf_lwfcontainer.cpp in Sources */,
+				81F1DFAE18E22D9000FA78E5 /* lwf_format.cpp in Sources */,
+				81F1DFBC18E22D9000FA78E5 /* lwf_movie.cpp in Sources */,
+				81F1DFC118E22D9000FA78E5 /* lwf_movieop.cpp in Sources */,
+				81F1DFD218E22D9000FA78E5 /* lwf_text.cpp in Sources */,
+				81F1DFA318E22D9000FA78E5 /* lwf_data.cpp in Sources */,
+				81F1DF7E18E22D9000FA78E5 /* lwf_cocos2dx_factory.cpp in Sources */,
+				81F1DF8D18E22D9000FA78E5 /* lwf_cocos2dx_textttf.cpp in Sources */,
+				81F1DF9A18E22D9000FA78E5 /* lwf_button.cpp in Sources */,
+				81F1DFB418E22D9000FA78E5 /* lwf_input.cpp in Sources */,
+				81F1DFBF18E22D9000FA78E5 /* lwf_movieat.cpp in Sources */,
+				81F1DFC518E22D9000FA78E5 /* lwf_object.cpp in Sources */,
+				81F1DFD618E22D9000FA78E5 /* lwf_utility.cpp in Sources */,
+				81F1DFC318E22D9000FA78E5 /* lwf_movieprop.cpp in Sources */,
+				81F1DF9718E22D9000FA78E5 /* lwf_bitmapex.cpp in Sources */,
+				81F1DFB618E22D9000FA78E5 /* lwf_iobject.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8190970118E2259A003E0BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos $(SRCROOT)/../../cocos2d/cocos/2d $(SRCROOT)/../../cocos2d/cocos/2d/platform $(SRCROOT)/../../cocos2d/cocos/base $(SRCROOT)/../../cocos2d/cocos/math/kazmath $(SRCROOT)/../../cocos2d/cocos/physics";
+			};
+			name = Debug;
+		};
+		8190970218E2259A003E0BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos $(SRCROOT)/../../cocos2d/cocos/2d $(SRCROOT)/../../cocos2d/cocos/2d/platform $(SRCROOT)/../../cocos2d/cocos/base $(SRCROOT)/../../cocos2d/cocos/math/kazmath $(SRCROOT)/../../cocos2d/cocos/physics";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8190970418E2259A003E0BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/LWF.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					CC_TARGET_OS_IPHONE,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/2d/platform/ios";
+			};
+			name = Debug;
+		};
+		8190970518E2259A003E0BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/LWF.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					CC_TARGET_OS_IPHONE,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/2d/platform/ios";
+			};
+			name = Release;
+		};
+		8190970F18E2264A003E0BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					CC_TARGET_OS_MAC,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/2d/platform/mac $(SRCROOT)/../../cocos2d/external/glfw3/include/mac";
+			};
+			name = Debug;
+		};
+		8190971018E2264A003E0BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					CC_TARGET_OS_MAC,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/2d/platform/mac $(SRCROOT)/../../cocos2d/external/glfw3/include/mac";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		819096DB18E2259A003E0BB0 /* Build configuration list for PBXProject "lwf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8190970118E2259A003E0BB0 /* Debug */,
+				8190970218E2259A003E0BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8190970318E2259A003E0BB0 /* Build configuration list for PBXNativeTarget "lwf iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8190970418E2259A003E0BB0 /* Debug */,
+				8190970518E2259A003E0BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8190970E18E2264A003E0BB0 /* Build configuration list for PBXNativeTarget "lwf Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8190970F18E2264A003E0BB0 /* Debug */,
+				8190971018E2264A003E0BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 819096D818E2259A003E0BB0 /* Project object */;
+}

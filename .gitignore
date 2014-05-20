@@ -1,0 +1,9 @@
+xcuserdata
+DerivedData
+
+libs/
+bin/
+obj/
+gen/
+assets/
+local.properties
