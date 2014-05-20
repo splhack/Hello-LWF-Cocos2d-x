@@ -27,17 +27,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 
-#include "CCNS.h"
-#include "ccMacros.h"
-#include "CCTextureCache.h"
-#include "CCSpriteFrameCache.h"
-#include "CCSpriteFrame.h"
-#include "CCSprite.h"
-#include "TransformUtils.h"
-#include "platform/CCFileUtils.h"
-#include "deprecated/CCString.h"
-#include "CCDirector.h"
+#include "2d/CCSpriteFrameCache.h"
+
 #include <vector>
+
+#include "2d/CCSpriteFrame.h"
+#include "2d/CCSprite.h"
+#include "platform/CCFileUtils.h"
+#include "base/CCNS.h"
+#include "base/ccMacros.h"
+#include "base/CCDirector.h"
+#include "renderer/CCTextureCache.h"
+#include "math/TransformUtils.h"
+
+#include "deprecated/CCString.h"
+
 
 using namespace std;
 
@@ -132,7 +136,7 @@ void SpriteFrameCache::addSpriteFramesWithDictionary(ValueMap& dictionary, Textu
             spriteFrame->initWithTexture(texture,
                                         Rect(x, y, w, h), 
                                         false,
-                                        Point(ox, oy),
+                                        Vec2(ox, oy),
                                         Size((float)ow, (float)oh)
                                         );
         } 
@@ -147,7 +151,7 @@ void SpriteFrameCache::addSpriteFramesWithDictionary(ValueMap& dictionary, Textu
                 rotated = frameDict["rotated"].asBool();
             }
 
-            Point offset = PointFromString(frameDict["offset"].asString());
+            Vec2 offset = PointFromString(frameDict["offset"].asString());
             Size sourceSize = SizeFromString(frameDict["sourceSize"].asString());
 
             // create frame
@@ -163,7 +167,7 @@ void SpriteFrameCache::addSpriteFramesWithDictionary(ValueMap& dictionary, Textu
         {
             // get values
             Size spriteSize = SizeFromString(frameDict["spriteSize"].asString());
-            Point spriteOffset = PointFromString(frameDict["spriteOffset"].asString());
+            Vec2 spriteOffset = PointFromString(frameDict["spriteOffset"].asString());
             Size spriteSourceSize = SizeFromString(frameDict["spriteSourceSize"].asString());
             Rect textureRect = RectFromString(frameDict["textureRect"].asString());
             bool textureRotated = frameDict["textureRotated"].asBool();

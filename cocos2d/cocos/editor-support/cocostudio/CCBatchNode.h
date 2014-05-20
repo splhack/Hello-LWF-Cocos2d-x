@@ -25,7 +25,7 @@ THE SOFTWARE.
 #ifndef __CCBATCHNODE_H__
 #define __CCBATCHNODE_H__
 
-#include "CCNode.h"
+#include "2d/CCNode.h"
 #include "cocostudio/CCArmatureDefine.h"
 
 namespace cocos2d {
@@ -56,8 +56,8 @@ public:
     virtual void addChild(cocos2d::Node *pChild, int zOrder) override;
     virtual void addChild(cocos2d::Node *pChild, int zOrder, int tag) override;
     virtual void removeChild(cocos2d::Node* child, bool cleanup) override;
-    virtual void visit(cocos2d::Renderer *renderer, const kmMat4 &parentTransform, bool parentTransformUpdated) override;
-    virtual void draw(cocos2d::Renderer *renderer, const kmMat4 &transform, bool transformUpdated) override;
+    virtual void visit(cocos2d::Renderer *renderer, const cocos2d::Mat4 &parentTransform, bool parentTransformUpdated) override;
+    virtual void draw(cocos2d::Renderer *renderer, const cocos2d::Mat4 &transform, bool transformUpdated) override;
     
 protected:
     void generateGroupCommand();

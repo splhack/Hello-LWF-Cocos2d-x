@@ -28,8 +28,8 @@
  ****************************************************************************/
 
 #include "SocketIO.h"
-#include "CCDirector.h"
-#include "CCScheduler.h"
+#include "base/CCDirector.h"
+#include "base/CCScheduler.h"
 #include "WebSocket.h"
 #include "HttpClient.h"
 #include <algorithm>
@@ -124,7 +124,7 @@ void SIOClientImpl::handshake()
     request->setUrl(pre.str().c_str());
     request->setRequestType(HttpRequest::Type::GET);
 
-    request->setResponseCallback(this, httpresponse_selector(SIOClientImpl::handshakeResponse));
+    request->setResponseCallback(CC_CALLBACK_2(SIOClientImpl::handshakeResponse, this));
     request->setTag("handshake");
 
     log("SIOClientImpl::handshake() waiting");

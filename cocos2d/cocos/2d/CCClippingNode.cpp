@@ -25,12 +25,11 @@
  *
  */
 
-#include "CCClippingNode.h"
-#include "kazmath/GL/matrix.h"
-#include "CCGLProgram.h"
-#include "CCShaderCache.h"
-#include "CCDirector.h"
-#include "CCDrawingPrimitives.h"
+#include "2d/CCClippingNode.h"
+#include "renderer/CCGLProgram.h"
+#include "renderer/CCGLProgramCache.h"
+#include "2d/CCDrawingPrimitives.h"
+#include "base/CCDirector.h"
 
 #include "renderer/CCRenderer.h"
 #include "renderer/CCGroupCommand.h"
@@ -46,7 +45,7 @@ static GLint s_layer = -1;
 
 static void setProgram(Node *n, GLProgram *p)
 {
-    n->setShaderProgram(p);
+    n->setGLProgram(p);
     
     auto& children = n->getChildren();
     for(const auto &child : children) {
@@ -187,23 +186,24 @@ void ClippingNode::onExit()
 
 void ClippingNode::drawFullScreenQuadClearStencil()
 {
-    kmGLMatrixMode(KM_GL_MODELVIEW);
-    kmGLPushMatrix();
-    kmGLLoadIdentity();
+    Director* director = Director::getInstance();
+    CCASSERT(nullptr != director, "Director is null when seting matrix stack");
     
-    kmGLMatrixMode(KM_GL_PROJECTION);
-    kmGLPushMatrix();
-    kmGLLoadIdentity();
+    director->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+    director->loadIdentityMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
     
-    DrawPrimitives::drawSolidRect(Point(-1,-1), Point(1,1), Color4F(1, 1, 1, 1));
+    director->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
+    director->loadIdentityMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
     
-    kmGLMatrixMode(KM_GL_PROJECTION);
-    kmGLPopMatrix();
-    kmGLMatrixMode(KM_GL_MODELVIEW);
-    kmGLPopMatrix();
+    
+    DrawPrimitives::drawSolidRect(Vec2(-1,-1), Vec2(1,1), Color4F(1, 1, 1, 1));
+    
+    director->popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
+    director->popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+    
 }
 
-void ClippingNode::visit(Renderer *renderer, const kmMat4 &parentTransform, bool parentTransformUpdated)
+void ClippingNode::visit(Renderer *renderer, const Mat4 &parentTransform, bool parentTransformUpdated)
 {
     if(!_visible)
         return;
@@ -214,10 +214,12 @@ void ClippingNode::visit(Renderer *renderer, const kmMat4 &parentTransform, bool
     _transformUpdated = false;
 
     // IMPORTANT:
-    // To ease the migration to v3.0, we still support the kmGL stack,
+    // To ease the migration to v3.0, we still support the Mat4 stack,
     // but it is deprecated and your code should not rely on it
-    kmGLPushMatrix();
-    kmGLLoadMatrix(&_modelViewTransform);
+    Director* director = Director::getInstance();
+    CCASSERT(nullptr != director, "Director is null when seting matrix stack");
+    director->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+    director->loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW, _modelViewTransform);
 
     //Add group command
         
@@ -235,7 +237,7 @@ void ClippingNode::visit(Renderer *renderer, const kmMat4 &parentTransform, bool
 #else
         // since glAlphaTest do not exists in OES, use a shader that writes
         // pixel only if greater than an alpha threshold
-        GLProgram *program = ShaderCache::getInstance()->getProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_ALPHA_TEST_NO_MV);
+        GLProgram *program = GLProgramCache::getInstance()->getGLProgram(GLProgram::SHADER_NAME_POSITION_TEXTURE_ALPHA_TEST_NO_MV);
         GLint alphaValueLocation = glGetUniformLocation(program->getProgram(), GLProgram::UNIFORM_NAME_ALPHA_TEST_VALUE);
         // set our alphaThreshold
         program->use();
@@ -285,7 +287,7 @@ void ClippingNode::visit(Renderer *renderer, const kmMat4 &parentTransform, bool
 
     renderer->popGroup();
     
-    kmGLPopMatrix();
+    director->popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
 }
 
 Node* ClippingNode::getStencil() const
@@ -380,7 +382,7 @@ void ClippingNode::onBeforeVisit()
     glStencilOp(!_inverted ? GL_ZERO : GL_REPLACE, GL_KEEP, GL_KEEP);
 
     // draw a fullscreen solid rectangle to clear the stencil buffer
-    //ccDrawSolidRect(Point::ZERO, ccpFromSize([[Director sharedDirector] winSize]), Color4F(1, 1, 1, 1));
+    //ccDrawSolidRect(Vec2::ZERO, ccpFromSize([[Director sharedDirector] winSize]), Color4F(1, 1, 1, 1));
     drawFullScreenQuadClearStencil();
 
     ///////////////////////////////////
