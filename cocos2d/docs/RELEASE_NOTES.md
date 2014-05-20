@@ -65,7 +65,7 @@
 * iOS 5.0 or newer
 * OS X 10.7 or newer
 * Windows 7 or newer
-* ~~Windows Phone 8 or newer~~ N/A for the moment
+* Windows Phone 8 or newer (initail version)
 * Linux Ubuntu 12.04 (or newer)
 * ~~Browsers via Emscripten~~ N/A for the moment
 
@@ -615,7 +615,7 @@ color3B = Color3B::WHITE;
 	| FileUtils::sharedFileUtils | FileUtils::getInstance |
 	| FileUtils::purgeFileUtils | FileUtils::destroyInstance |
 	| GLView::sharedOpenGLView | GLView::getInstance |
-	| ShaderCache::sharedShaderCache | ShaderCache::getInstance |
+	| ShaderCache::sharedShaderCache | GLProgramCache::getInstance |
 	| ShaderCache::purgeSharedShaderCache | ShaderCache::destroyInstance |
 	| AnimationCache::sharedAnimationCache | AnimationCache::getInstance |
 	| AnimationCache::purgeSharedAnimationCache | AnimationCache::destroyInstance |

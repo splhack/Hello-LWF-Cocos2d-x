@@ -582,7 +582,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos $(SRCROOT)/../../cocos2d/cocos/2d $(SRCROOT)/../../cocos2d/cocos/2d/platform $(SRCROOT)/../../cocos2d/cocos/base $(SRCROOT)/../../cocos2d/cocos/math/kazmath $(SRCROOT)/../../cocos2d/cocos/physics";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos";
 			};
 			name = Debug;
 		};
@@ -613,7 +613,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos $(SRCROOT)/../../cocos2d/cocos/2d $(SRCROOT)/../../cocos2d/cocos/2d/platform $(SRCROOT)/../../cocos2d/cocos/base $(SRCROOT)/../../cocos2d/cocos/math/kazmath $(SRCROOT)/../../cocos2d/cocos/physics";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -632,7 +632,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/2d/platform/ios";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/platform/ios";
 			};
 			name = Debug;
 		};
@@ -650,7 +650,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/2d/platform/ios";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/platform/ios";
 			};
 			name = Release;
 		};
@@ -666,7 +666,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/2d/platform/mac $(SRCROOT)/../../cocos2d/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/platform/mac $(SRCROOT)/../../cocos2d/external/glfw3/include/mac";
 			};
 			name = Debug;
 		};
@@ -683,7 +683,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/2d/platform/mac $(SRCROOT)/../../cocos2d/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d/cocos/platform/mac $(SRCROOT)/../../cocos2d/external/glfw3/include/mac";
 			};
 			name = Release;
 		};

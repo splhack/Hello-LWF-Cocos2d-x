@@ -28,8 +28,8 @@ THE SOFTWARE.
 #ifndef __CCSCENE_H__
 #define __CCSCENE_H__
 
-#include "CCNode.h"
-#include "CCPhysicsWorld.h"
+#include "2d/CCNode.h"
+#include "physics/CCPhysicsWorld.h"
 
 NS_CC_BEGIN
 

@@ -38,17 +38,11 @@ LOCAL_SRC_FILES := \
     supports/lzma/Alloc.c \
     supports/lzma/LzmaDec.c
 COCOS_PATH=$(LOCAL_PATH)/../../cocos2d/cocos
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/core \
+LOCAL_C_INCLUDES := $(COCOS_PATH) \
+					$(COCOS_PATH)/platform/android \
+					$(LOCAL_PATH)/core \
                     $(LOCAL_PATH)/cocos2dx \
-                    $(LOCAL_PATH)/supports/lzma \
-					$(COCOS_PATH) \
-					$(COCOS_PATH)/2d \
-					$(COCOS_PATH)/2d/platform \
-					$(COCOS_PATH)/2d/platform/android \
-					$(COCOS_PATH)/base \
-					$(COCOS_PATH)/math/kazmath \
-					$(COCOS_PATH)/physics
+                    $(LOCAL_PATH)/supports/lzma
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/core \
-                           $(LOCAL_PATH)/cocos2dx \
-                           $(LOCAL_PATH)/supports/lzma
+                           $(LOCAL_PATH)/cocos2dx
 include $(BUILD_STATIC_LIBRARY)

@@ -25,9 +25,9 @@ THE SOFTWARE.
 #include "cocostudio/CCActionObject.h"
 #include "cocostudio/DictionaryHelper.h"
 
-#include "CCDirector.h"
-#include "CCScheduler.h"
-#include "CCActionInstant.h"
+#include "base/CCDirector.h"
+#include "base/CCScheduler.h"
+#include "2d/CCActionInstant.h"
 
 using namespace cocos2d;
 
@@ -123,7 +123,7 @@ void ActionObject::initWithDictionary(const rapidjson::Value& dic, Ref* root)
 		if(length > maxLength)
 			maxLength = length;
 	}
-	_fTotalTime = maxLength*_fTotalTime;
+	_fTotalTime = maxLength*_fUnitTime;
 }
 
 void ActionObject::addActionNode(ActionNode* node)
