@@ -74,11 +74,8 @@ bool HelloWorld::init()
     this->addChild(sprite, 0);
 
     // add a lwf
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-	const char *path = "sample3_max_optimized/sample3_max_optimized.lwf";
-#else
-	const char *path = "sample3_max_optimized.lwf";
-#endif
+	//const char *path = "sample3_max_optimized/sample3_max_optimized.lwf";
+	const char *path = "mask/mask.lwf";
     auto lwfNode = LWFNode::create(path);
 	lwfNode->lwf->AddEventHandler("done", [=](LWF::Movie *, LWF::Button *){
 		lwfNode->lwf->GotoAndPlayMovie("_root", 1);
