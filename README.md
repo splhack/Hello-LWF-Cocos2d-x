@@ -17,6 +17,11 @@ The example
 
 You'll see a Flash movie which is embedded on Cocos2d-x.
 
+You can change LWF data in Classes/HelloWorldScene.cpp
+
+    //const char *path = "sample3_max_optimized/sample3_max_optimized.lwf";
+    const char *path = "mask/mask.lwf";
+
 ![](http://gree.github.io/lwf-loader/images/lwfloader-sample3.png)
 
 (This example animation is also available on HTML5 http://gree.github.io/lwf-demo/html5/lwf-loader/sample3.html)
