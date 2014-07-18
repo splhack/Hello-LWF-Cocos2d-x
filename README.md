@@ -23,6 +23,7 @@ You can change LWF data in Classes/HelloWorldScene.cpp
     const char *path = "mask/mask.lwf";
 
 ![](http://gree.github.io/lwf-loader/images/lwfloader-sample3.png)
+![](http://discuss.cocos2d-x.org/uploads/default/6753/0a2b7698091bc76e.png)
 
 (This example animation is also available on HTML5 http://gree.github.io/lwf-demo/html5/lwf-loader/sample3.html)
 
