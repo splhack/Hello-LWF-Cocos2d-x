@@ -80,10 +80,11 @@ public:
     virtual ActionInterval* reverse() const override = 0;
 	virtual ActionInterval *clone() const override = 0;
 
-protected:
+CC_CONSTRUCTOR_ACCESS:
     /** initializes the action */
     bool initWithDuration(float d);
 
+protected:
     float _elapsed;
     bool   _firstTick;
 };
@@ -370,6 +371,7 @@ class CC_DLL RotateBy : public ActionInterval
 public:
     /** creates the action */
     static RotateBy* create(float duration, float deltaAngle);
+    /** @warning The physics body contained in Node doesn't support rotate with different x and y angle. */
     static RotateBy* create(float duration, float deltaAngleZ_X, float deltaAngleZ_Y);
     static RotateBy* create(float duration, const Vec3& deltaAngle3D);
 
@@ -387,6 +389,7 @@ CC_CONSTRUCTOR_ACCESS:
 
     /** initializes the action */
     bool initWithDuration(float duration, float deltaAngle);
+    /** @warning The physics body contained in Node doesn't support rotate with different x and y angle. */
     bool initWithDuration(float duration, float deltaAngleZ_X, float deltaAngleZ_Y);
     bool initWithDuration(float duration, const Vec3& deltaAngle3D);
     
@@ -583,9 +586,11 @@ public:
     virtual JumpTo* clone() const override;
 	virtual JumpTo* reverse(void) const override;
 
-private:
+CC_CONSTRUCTOR_ACCESS:
     JumpTo() {}
     virtual ~JumpTo() {}
+
+private:
     CC_DISALLOW_COPY_AND_ASSIGN(JumpTo);
 };
 
@@ -675,6 +680,7 @@ private:
 
 /** @brief Scales a Node object to a zoom factor by modifying it's scale attribute.
  @warning This action doesn't support "reverse"
+ @warning The physics body contained in Node doesn't support this action.
  */
 class CC_DLL ScaleTo : public ActionInterval
 {
@@ -726,6 +732,7 @@ private:
 };
 
 /** @brief Scales a Node object a zoom factor by modifying it's scale attribute.
+ @warning The physics body contained in Node doesn't support this action.
 */
 class CC_DLL ScaleBy : public ScaleTo
 {
@@ -746,7 +753,7 @@ public:
     virtual ScaleBy* clone() const override;
 	virtual ScaleBy* reverse(void) const override;
 
-protected:
+CC_CONSTRUCTOR_ACCESS:
     ScaleBy() {}
     virtual ~ScaleBy() {}
 
@@ -838,7 +845,7 @@ public:
     
     void setReverseAction(FadeTo* ac);
 
-protected:
+CC_CONSTRUCTOR_ACCESS:
     FadeIn():_reverseAction(nullptr) {}
     virtual ~FadeIn() {}
 
@@ -865,7 +872,7 @@ public:
     
     void setReverseAction(FadeTo* ac);
 
-protected:
+CC_CONSTRUCTOR_ACCESS:
     FadeOut():_reverseAction(nullptr) {}
     virtual ~FadeOut() {}
 private:
@@ -957,7 +964,7 @@ public:
     virtual DelayTime* reverse() const override;
     virtual DelayTime* clone() const override;
 
-protected:
+CC_CONSTRUCTOR_ACCESS:
     DelayTime() {}
     virtual ~DelayTime() {}
 

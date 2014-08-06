@@ -43,6 +43,7 @@ class Button : public Widget
     DECLARE_CLASS_GUI_INFO
     
 public:
+
     /**
      * Default constructor
      */
@@ -70,7 +71,6 @@ public:
                           const std::string& disableImage = "",
                           TextureResType texType = TextureResType::LOCAL);
     
-
     /**
      * Load textures for button.
      *
@@ -80,7 +80,7 @@ public:
      *
      * @param disabled    disabled state texture name.
      *
-     * @param texType    @see UI_TEX_TYPE_LOCAL
+     * @param texType    @see TextureResType
      */
     void loadTextures(const std::string& normal,
                       const std::string& selected,
@@ -92,7 +92,7 @@ public:
      *
      * @param normal    normal state texture.
      *
-     * @param texType    @see UI_TEX_TYPE_LOCAL
+     * @param texType    @see TextureResType
      */
     void loadTextureNormal(const std::string& normal, TextureResType texType = TextureResType::LOCAL);
 
@@ -101,7 +101,7 @@ public:
      *
      * @param selected    selected state texture.
      *
-     * @param texType    @see UI_TEX_TYPE_LOCAL
+     * @param texType    @see TextureResType
      */
     void loadTexturePressed(const std::string& selected, TextureResType texType = TextureResType::LOCAL);
 
@@ -110,7 +110,7 @@ public:
      *
      * @param disabled    dark state texture.
      *
-     * @param texType    @see UI_TEX_TYPE_LOCAL
+     * @param texType    @see TextureResType
      */
     void loadTextureDisabled(const std::string& disabled, TextureResType texType = TextureResType::LOCAL);
 
@@ -237,7 +237,6 @@ protected:
     Size _pressedTextureSize;
     Size _disabledTextureSize;
     bool _pressedActionEnabled;
-    Color3B _titleColor;
     float _normalTextureScaleXInSize;
     float _normalTextureScaleYInSize;
     float _pressedTextureScaleXInSize;
@@ -248,6 +247,17 @@ protected:
     bool _normalTextureAdaptDirty;
     bool _pressedTextureAdaptDirty;
     bool _disabledTextureAdaptDirty;
+
+private:
+    enum class FontType
+    {
+        SYSTEM,
+        TTF
+    };
+
+    std::string _fontName;
+    int _fontSize;
+    FontType _type;
 };
 
 }

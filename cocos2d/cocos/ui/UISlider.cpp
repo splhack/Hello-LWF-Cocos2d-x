@@ -66,6 +66,7 @@ _barRendererAdaptDirty(true),
 _progressBarRendererDirty(true),
 _eventCallback(nullptr)
 {
+    setTouchEnabled(true);
 }
 
 Slider::~Slider()
@@ -147,8 +148,6 @@ void Slider::loadBarTexture(const std::string& fileName, TextureResType texType)
         default:
             break;
     }
-    _barRenderer->setColor(this->getColor());
-    _barRenderer->setOpacity(this->getOpacity());
     
     _barRendererAdaptDirty = true;
     _progressBarRendererDirty = true;
@@ -188,9 +187,6 @@ void Slider::loadProgressBarTexture(const std::string& fileName, TextureResType 
         default:
             break;
     }
-    
-    _progressBarRenderer->setColor(this->getColor());
-    _progressBarRenderer->setOpacity(this->getOpacity());
     
     _progressBarRenderer->setAnchorPoint(Vec2(0.0f, 0.5f));
     _progressBarTextureSize = _progressBarRenderer->getContentSize();
@@ -313,8 +309,6 @@ void Slider::loadSlidBallTextureNormal(const std::string& normal,TextureResType 
         default:
             break;
     }
-    _slidBallNormalRenderer->setColor(this->getColor());
-    _slidBallNormalRenderer->setOpacity(this->getOpacity());
 }
 
 void Slider::loadSlidBallTexturePressed(const std::string& pressed,TextureResType texType)
@@ -336,8 +330,6 @@ void Slider::loadSlidBallTexturePressed(const std::string& pressed,TextureResTyp
         default:
             break;
     }
-    _slidBallPressedRenderer->setColor(this->getColor());
-    _slidBallPressedRenderer->setOpacity(this->getOpacity());
 }
 
     void Slider::loadSlidBallTextureDisabled(const std::string& disabled,TextureResType texType)
@@ -359,8 +351,6 @@ void Slider::loadSlidBallTexturePressed(const std::string& pressed,TextureResTyp
         default:
             break;
     }
-    _slidBallDisabledRenderer->setColor(this->getColor());
-    _slidBallDisabledRenderer->setOpacity(this->getOpacity());
 }
 
 void Slider::setPercent(int percent)
@@ -500,14 +490,14 @@ void Slider::barRendererScaleChangedWithSize()
     {
         
         _barRenderer->setScale(1.0f);
-        _barLength = _size.width;
+        _barLength = _contentSize.width;
     }
     else
     {
-        _barLength = _size.width;
+        _barLength = _contentSize.width;
         if (_scale9Enabled)
         {
-            static_cast<extension::Scale9Sprite*>(_barRenderer)->setPreferredSize(_size);
+            static_cast<extension::Scale9Sprite*>(_barRenderer)->setPreferredSize(_contentSize);
         }
         else
         {
@@ -517,8 +507,8 @@ void Slider::barRendererScaleChangedWithSize()
                 _barRenderer->setScale(1.0f);
                 return;
             }
-            float bscaleX = _size.width / btextureSize.width;
-            float bscaleY = _size.height / btextureSize.height;
+            float bscaleX = _contentSize.width / btextureSize.width;
+            float bscaleY = _contentSize.height / btextureSize.height;
             _barRenderer->setScaleX(bscaleX);
             _barRenderer->setScaleY(bscaleY);
         }
@@ -534,8 +524,8 @@ void Slider::progressBarRendererScaleChangedWithSize()
         if (!_scale9Enabled)
         {
             Size ptextureSize = _progressBarTextureSize;
-            float pscaleX = _size.width / ptextureSize.width;
-            float pscaleY = _size.height / ptextureSize.height;
+            float pscaleX = _contentSize.width / ptextureSize.width;
+            float pscaleY = _contentSize.height / ptextureSize.height;
             _progressBarRenderer->setScaleX(pscaleX);
             _progressBarRenderer->setScaleY(pscaleY);
         }
@@ -544,7 +534,7 @@ void Slider::progressBarRendererScaleChangedWithSize()
     {
         if (_scale9Enabled)
         {
-            static_cast<extension::Scale9Sprite*>(_progressBarRenderer)->setPreferredSize(_size);
+            static_cast<extension::Scale9Sprite*>(_progressBarRenderer)->setPreferredSize(_contentSize);
             _progressBarTextureSize = _progressBarRenderer->getContentSize();
         }
         else
@@ -555,8 +545,8 @@ void Slider::progressBarRendererScaleChangedWithSize()
                 _progressBarRenderer->setScale(1.0f);
                 return;
             }
-            float pscaleX = _size.width / ptextureSize.width;
-            float pscaleY = _size.height / ptextureSize.height;
+            float pscaleX = _contentSize.width / ptextureSize.width;
+            float pscaleY = _contentSize.height / ptextureSize.height;
             _progressBarRenderer->setScaleX(pscaleX);
             _progressBarRenderer->setScaleY(pscaleY);
         }

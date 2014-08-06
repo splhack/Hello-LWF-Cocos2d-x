@@ -160,8 +160,6 @@ void LoadingBar::loadTexture(const std::string& texture,TextureResType texType)
         default:
             break;
     }
-    _barRenderer->setColor(this->getColor());
-    _barRenderer->setOpacity(this->getOpacity());
     
     _barRendererTextureSize = _barRenderer->getContentSize();
     
@@ -317,7 +315,7 @@ void LoadingBar::barRendererScaleChangedWithSize()
     }
     else
     {
-        _totalLength = _size.width;
+        _totalLength = _contentSize.width;
         if (_scale9Enabled)
         {
             setScale9Scale();
@@ -331,8 +329,8 @@ void LoadingBar::barRendererScaleChangedWithSize()
                 _barRenderer->setScale(1.0f);
                 return;
             }
-            float scaleX = _size.width / textureSize.width;
-            float scaleY = _size.height / textureSize.height;
+            float scaleX = _contentSize.width / textureSize.width;
+            float scaleY = _contentSize.height / textureSize.height;
             _barRenderer->setScaleX(scaleX);
             _barRenderer->setScaleY(scaleY);
         }
@@ -353,7 +351,7 @@ void LoadingBar::barRendererScaleChangedWithSize()
 void LoadingBar::setScale9Scale()
 {
     float width = (float)(_percent) / 100.0f * _totalLength;
-    static_cast<extension::Scale9Sprite*>(_barRenderer)->setPreferredSize(Size(width, _size.height));
+    static_cast<extension::Scale9Sprite*>(_barRenderer)->setPreferredSize(Size(width, _contentSize.height));
 }
 
 std::string LoadingBar::getDescription() const
