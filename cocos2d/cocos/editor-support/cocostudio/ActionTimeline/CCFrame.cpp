@@ -25,6 +25,8 @@ THE SOFTWARE.
 #include "CCFrame.h"
 #include "CCTimeLine.h"
 #include "CCActionTimeline.h"
+#include "2d/CCSpriteFrameCache.h"
+#include "2d/CCSpriteFrame.h"
 
 USING_NS_CC;
 
@@ -61,7 +63,7 @@ void Frame::cloneProperty(Frame* frame)
 // VisibleFrame
 VisibleFrame* VisibleFrame::create()
 {
-    VisibleFrame* frame = new VisibleFrame();
+    VisibleFrame* frame = new (std::nothrow) VisibleFrame();
     if (frame)
     {
         frame->autorelease();
@@ -97,7 +99,7 @@ Frame* VisibleFrame::clone()
 // TextureFrame
 TextureFrame* TextureFrame::create()
 {
-    TextureFrame* frame = new TextureFrame();
+    TextureFrame* frame = new (std::nothrow) TextureFrame();
     if (frame)
     {
         frame->autorelease();
@@ -148,7 +150,7 @@ Frame* TextureFrame::clone()
 // RotationFrame
 RotationFrame* RotationFrame::create()
 {
-    RotationFrame* frame = new RotationFrame();
+    RotationFrame* frame = new (std::nothrow) RotationFrame();
     if (frame)
     {
         frame->autorelease();
@@ -175,7 +177,7 @@ void RotationFrame::onEnter(Frame *nextFrame)
 
 void RotationFrame::apply(float percent)
 {
-    if (_tween && percent != 0 && _betwennRotation != 0)
+    if (_tween && _betwennRotation != 0)
     {
         float rotation = _rotation + percent * _betwennRotation;
         _node->setRotation(rotation);
@@ -197,7 +199,7 @@ Frame* RotationFrame::clone()
 // SkewFrame
 SkewFrame* SkewFrame::create()
 {
-    SkewFrame* frame = new SkewFrame();
+    SkewFrame* frame = new (std::nothrow) SkewFrame();
     if (frame)
     {
         frame->autorelease();
@@ -227,7 +229,7 @@ void SkewFrame::onEnter(Frame *nextFrame)
 
 void SkewFrame::apply(float percent)
 {
-    if (_tween && percent != 0 && (_betweenSkewX != 0 || _betweenSkewY != 0))
+    if (_tween && (_betweenSkewX != 0 || _betweenSkewY != 0))
     {
         float skewx = _skewX + percent * _betweenSkewX;
         float skewy = _skewY + percent * _betweenSkewY;
@@ -254,7 +256,7 @@ Frame* SkewFrame::clone()
 // RotationSkewFrame
 RotationSkewFrame* RotationSkewFrame::create()
 {
-    RotationSkewFrame* frame = new RotationSkewFrame();
+    RotationSkewFrame* frame = new (std::nothrow) RotationSkewFrame();
     if (frame)
     {
         frame->autorelease();
@@ -282,7 +284,7 @@ void RotationSkewFrame::onEnter(Frame *nextFrame)
 
 void RotationSkewFrame::apply(float percent)
 {
-    if (_tween && percent != 0 && (_betweenSkewX != 0 || _betweenSkewY != 0))
+    if (_tween && (_betweenSkewX != 0 || _betweenSkewY != 0))
     {
         float skewx = _skewX + percent * _betweenSkewX;
         float skewy = _skewY + percent * _betweenSkewY;
@@ -307,7 +309,7 @@ Frame* RotationSkewFrame::clone()
 // PositionFrame
 PositionFrame* PositionFrame::create()
 {
-    PositionFrame* frame = new PositionFrame();
+    PositionFrame* frame = new (std::nothrow) PositionFrame();
     if (frame)
     {
         frame->autorelease();
@@ -335,7 +337,7 @@ void PositionFrame::onEnter(Frame *nextFrame)
 
 void PositionFrame::apply(float percent)
 {
-    if (_tween && percent != 0 && (_betweenX != 0 || _betweenY != 0))
+    if (_tween && (_betweenX != 0 || _betweenY != 0))
     {
         Point p;
         p.x = _position.x + _betweenX * percent;
@@ -359,7 +361,7 @@ Frame* PositionFrame::clone()
 // ScaleFrame
 ScaleFrame* ScaleFrame::create()
 {
-    ScaleFrame* frame = new ScaleFrame();
+    ScaleFrame* frame = new (std::nothrow) ScaleFrame();
     if (frame)
     {
         frame->autorelease();
@@ -389,7 +391,7 @@ void ScaleFrame::onEnter(Frame *nextFrame)
 
 void ScaleFrame::apply(float percent)
 {
-    if (_tween && percent != 0 && (_betweenScaleX != 0 || _betweenScaleY != 0))
+    if (_tween && (_betweenScaleX != 0 || _betweenScaleY != 0))
     {
         float scaleX = _scaleX + _betweenScaleX * percent;
         float scaleY = _scaleY + _betweenScaleY * percent;
@@ -414,7 +416,7 @@ Frame* ScaleFrame::clone()
 // AnchorPointFrame
 AnchorPointFrame* AnchorPointFrame::create()
 {
-    AnchorPointFrame* frame = new AnchorPointFrame();
+    AnchorPointFrame* frame = new (std::nothrow) AnchorPointFrame();
     if (frame)
     {
         frame->autorelease();
@@ -450,7 +452,7 @@ Frame* AnchorPointFrame::clone()
 // InnerActionFrame
 InnerActionFrame* InnerActionFrame::create()
 {
-    InnerActionFrame* frame = new InnerActionFrame();
+    InnerActionFrame* frame = new (std::nothrow) InnerActionFrame();
     if (frame)
     {
         frame->autorelease();
@@ -486,7 +488,7 @@ Frame* InnerActionFrame::clone()
 // ColorFrame
 ColorFrame* ColorFrame::create()
 {
-    ColorFrame* frame = new ColorFrame();
+    ColorFrame* frame = new (std::nothrow) ColorFrame();
     if (frame)
     {
         frame->autorelease();
@@ -516,14 +518,11 @@ void ColorFrame::onEnter(Frame *nextFrame)
         _betweenGreen = color.g - _color.g;
         _betweenBlue  = color.b - _color.b;
     }
-
-    _node->setCascadeColorEnabled(true);
-    _node->setCascadeOpacityEnabled(true);
 }
 
 void ColorFrame::apply(float percent)
 {
-    if (_tween && percent != 0 && (_betweenAlpha !=0 || _betweenRed != 0 || _betweenGreen != 0 || _betweenBlue != 0))
+    if (_tween && (_betweenAlpha !=0 || _betweenRed != 0 || _betweenGreen != 0 || _betweenBlue != 0))
     {
         GLubyte alpha = _alpha + _betweenAlpha * percent;
 
@@ -552,7 +551,7 @@ Frame* ColorFrame::clone()
 // EventFrame
 EventFrame* EventFrame::create()
 {
-    EventFrame* frame = new EventFrame();
+    EventFrame* frame = new (std::nothrow) EventFrame();
     if (frame)
     {
         frame->autorelease();
@@ -587,7 +586,7 @@ Frame* EventFrame::clone()
 // ZOrderFrame
 ZOrderFrame* ZOrderFrame::create()
 {
-    ZOrderFrame* frame = new ZOrderFrame();
+    ZOrderFrame* frame = new (std::nothrow) ZOrderFrame();
     if (frame)
     {
         frame->autorelease();

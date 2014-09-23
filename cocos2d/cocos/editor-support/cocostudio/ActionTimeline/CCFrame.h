@@ -25,14 +25,20 @@ THE SOFTWARE.
 #ifndef __CCFRAME_H__
 #define __CCFRAME_H__
 
-#include "cocos2d.h"
+#include <string>
+#include "base/CCRef.h"
+#include "base/CCVector.h"
+#include "2d/CCNode.h"
+#include "2d/CCSprite.h"
 #include "CCTimelineMacro.h"
+#include "cocostudio/CocosStudioExport.h"
+
 
 NS_TIMELINE_BEGIN
 
 class Timeline;
 
-class  Frame : public cocos2d::Ref
+class CC_STUDIO_DLL Frame : public cocos2d::Ref
 {
 public:
 
@@ -68,7 +74,7 @@ protected:
 };
 
 
-class  VisibleFrame : public Frame
+class CC_STUDIO_DLL VisibleFrame : public Frame
 {
 public:
     static VisibleFrame* create();
@@ -86,7 +92,7 @@ protected:
 };
 
 
-class  TextureFrame : public Frame
+class CC_STUDIO_DLL TextureFrame : public Frame
 {
 public:
     static TextureFrame* create();
@@ -106,7 +112,7 @@ protected:
     std::string _textureName;
 };
 
-class  RotationFrame : public Frame
+class CC_STUDIO_DLL RotationFrame : public Frame
 {
 public:
     static RotationFrame* create();
@@ -125,7 +131,7 @@ protected:
     float _betwennRotation;
 };
 
-class  SkewFrame : public Frame
+class CC_STUDIO_DLL SkewFrame : public Frame
 {
 public:
     static SkewFrame* create();
@@ -150,7 +156,7 @@ protected:
 };
 
 
-class  RotationSkewFrame : public SkewFrame
+class CC_STUDIO_DLL RotationSkewFrame : public SkewFrame
 {
 public:
     static RotationSkewFrame* create();
@@ -163,7 +169,7 @@ public:
 };
 
 
-class  PositionFrame : public Frame
+class CC_STUDIO_DLL PositionFrame : public Frame
 {
 public:
     static PositionFrame* create();
@@ -189,7 +195,7 @@ protected:
 };
 
 
-class  ScaleFrame : public Frame
+class CC_STUDIO_DLL ScaleFrame : public Frame
 {
 public:
     static ScaleFrame* create();
@@ -216,7 +222,7 @@ protected:
 };
 
 
-class  AnchorPointFrame : public Frame
+class CC_STUDIO_DLL AnchorPointFrame : public Frame
 {
 public:
     static AnchorPointFrame* create();
@@ -242,7 +248,7 @@ enum InnerActionType
     SingleFrame
 };
 
-class  InnerActionFrame : public Frame
+class CC_STUDIO_DLL InnerActionFrame : public Frame
 {
 public:
     static InnerActionFrame* create();
@@ -263,7 +269,7 @@ protected:
 };
 
 
-class  ColorFrame : public Frame
+class CC_STUDIO_DLL ColorFrame : public Frame
 {
 public:
     static ColorFrame* create();
@@ -290,7 +296,7 @@ protected:
 };
 
 
-class  EventFrame : public Frame
+class CC_STUDIO_DLL EventFrame : public Frame
 {
 public:
     static EventFrame* create();
@@ -307,7 +313,7 @@ protected:
     std::string _event;
 };
 
-class  ZOrderFrame : public Frame
+class CC_STUDIO_DLL ZOrderFrame : public Frame
 {
 public:
     static ZOrderFrame* create();

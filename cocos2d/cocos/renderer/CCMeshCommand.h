@@ -26,10 +26,9 @@
 #define _CC_MESHCOMMAND_H_
 
 #include <unordered_map>
-#include "CCRenderCommand.h"
+#include "renderer/CCRenderCommand.h"
 #include "renderer/CCGLProgram.h"
 #include "math/CCMath.h"
-#include "CCRenderCommandPool.h"
 
 NS_CC_BEGIN
 
@@ -40,7 +39,7 @@ class EventListenerCustom;
 class EventCustom;
 
 //it is a common mesh
-class MeshCommand : public RenderCommand
+class CC_DLL MeshCommand : public RenderCommand
 {
 public:
 
@@ -70,7 +69,7 @@ public:
     void batchDraw();
     void postBatchDraw();
     
-    void genMaterialID(GLuint texID, void* glProgramState, void* mesh, const BlendFunc& blend);
+    void genMaterialID(GLuint texID, void* glProgramState, GLuint vertexBuffer, GLuint indexBuffer, const BlendFunc& blend);
     
     uint32_t getMaterialID() const { return _materialID; }
     

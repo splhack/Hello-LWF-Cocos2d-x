@@ -25,9 +25,12 @@ THE SOFTWARE.
 #ifndef __CCTIMELINE_ACTION_CACHE_H__
 #define __CCTIMELINE_ACTION_CACHE_H__
 
-#include "cocos2d.h"
+#include <unordered_map>
+#include "base/CCMap.h"
+
 #include "cocostudio/DictionaryHelper.h"
 #include "CCTimelineMacro.h"
+#include "cocostudio/CocosStudioExport.h"
 
 NS_TIMELINE_BEGIN
 
@@ -35,7 +38,7 @@ class ActionTimeline;
 class Timeline;
 class Frame;
 
-class ActionTimelineCache
+class CC_STUDIO_DLL ActionTimelineCache
 {
 public:
     /** Gets the singleton */
