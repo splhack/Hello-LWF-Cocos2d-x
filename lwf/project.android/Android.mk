@@ -12,6 +12,7 @@ LOCAL_SRC_FILES := \
     cocos2dx/lwf_cocos2dx_textttf.cpp \
     core/lwf_animation.cpp \
     core/lwf_bitmap.cpp \
+    core/lwf_bitmapclip.cpp \
     core/lwf_bitmapex.cpp \
     core/lwf_button.cpp \
     core/lwf_core.cpp \

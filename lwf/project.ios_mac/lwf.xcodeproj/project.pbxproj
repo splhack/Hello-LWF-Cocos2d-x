@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81010BFD19D24118002399B1 /* lwf_bitmapclip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81010BFB19D24118002399B1 /* lwf_bitmapclip.cpp */; };
+		81010BFE19D24118002399B1 /* lwf_bitmapclip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81010BFB19D24118002399B1 /* lwf_bitmapclip.cpp */; };
+		81010BFF19D24118002399B1 /* lwf_bitmapclip.h in Headers */ = {isa = PBXBuildFile; fileRef = 81010BFC19D24118002399B1 /* lwf_bitmapclip.h */; };
 		819096E418E2259A003E0BB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819096E318E2259A003E0BB0 /* Foundation.framework */; };
 		81F1DF7A18E22D9000FA78E5 /* lwf_cocos2dx.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3318E22D9000FA78E5 /* lwf_cocos2dx.h */; };
 		81F1DF7B18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3418E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp */; };
@@ -125,6 +128,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		81010BFB19D24118002399B1 /* lwf_bitmapclip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_bitmapclip.cpp; sourceTree = "<group>"; };
+		81010BFC19D24118002399B1 /* lwf_bitmapclip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_bitmapclip.h; sourceTree = "<group>"; };
 		819096E018E2259A003E0BB0 /* liblwf iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblwf iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		819096E318E2259A003E0BB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		819096F418E2259A003E0BB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -286,6 +291,8 @@
 				81F1DF4518E22D9000FA78E5 /* lwf_animation.h */,
 				81F1DF4618E22D9000FA78E5 /* lwf_bitmap.cpp */,
 				81F1DF4718E22D9000FA78E5 /* lwf_bitmap.h */,
+				81010BFB19D24118002399B1 /* lwf_bitmapclip.cpp */,
+				81010BFC19D24118002399B1 /* lwf_bitmapclip.h */,
 				81F1DF4818E22D9000FA78E5 /* lwf_bitmapex.cpp */,
 				81F1DF4918E22D9000FA78E5 /* lwf_bitmapex.h */,
 				81F1DF4A18E22D9000FA78E5 /* lwf_button.cpp */,
@@ -384,6 +391,7 @@
 				81F1DF9C18E22D9000FA78E5 /* lwf_button.h in Headers */,
 				81F1DF7D18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.h in Headers */,
 				81F1DFB318E22D9000FA78E5 /* lwf_graphic.h in Headers */,
+				81010BFF19D24118002399B1 /* lwf_bitmapclip.h in Headers */,
 				81F1DF7A18E22D9000FA78E5 /* lwf_cocos2dx.h in Headers */,
 				81F1DF8318E22D9000FA78E5 /* lwf_cocos2dx_node.h in Headers */,
 				81F1DFDF18E22D9000FA78E5 /* Types.h in Headers */,
@@ -477,6 +485,7 @@
 				81F1DF8B18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp in Sources */,
 				81F1DFCF18E22D9000FA78E5 /* lwf_property.cpp in Sources */,
 				81F1DFDA18E22D9000FA78E5 /* Alloc.c in Sources */,
+				81010BFE19D24118002399B1 /* lwf_bitmapclip.cpp in Sources */,
 				81F1DF8518E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp in Sources */,
 				81F1DFAC18E22D9000FA78E5 /* lwf_eventmovie.cpp in Sources */,
 				81F1DF9F18E22D9000FA78E5 /* lwf_core.cpp in Sources */,
@@ -518,6 +527,7 @@
 				81F1DF8A18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp in Sources */,
 				81F1DFCE18E22D9000FA78E5 /* lwf_property.cpp in Sources */,
 				81F1DFD918E22D9000FA78E5 /* Alloc.c in Sources */,
+				81010BFD19D24118002399B1 /* lwf_bitmapclip.cpp in Sources */,
 				81F1DF8418E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp in Sources */,
 				81F1DFAB18E22D9000FA78E5 /* lwf_eventmovie.cpp in Sources */,
 				81F1DF9E18E22D9000FA78E5 /* lwf_core.cpp in Sources */,

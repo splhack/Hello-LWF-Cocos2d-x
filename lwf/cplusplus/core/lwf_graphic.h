@@ -30,8 +30,8 @@ class Graphic : public Object
 public:
 	typedef vector<shared_ptr<Object> > DisplayList;
 
-private:
-	DisplayList m_displayList;
+public:
+	DisplayList displayList;
 
 public:
 	Graphic(LWF *l, Movie *p, int objId);
