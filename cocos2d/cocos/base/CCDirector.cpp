@@ -47,7 +47,7 @@ THE SOFTWARE.
 #include "renderer/CCTextureCache.h"
 #include "renderer/ccGLStateCache.h"
 #include "renderer/CCRenderer.h"
-#include "base/CCCamera.h"
+#include "2d/CCCamera.h"
 #include "base/CCUserDefault.h"
 #include "base/ccFPSImages.h"
 #include "base/CCScheduler.h"
@@ -287,41 +287,8 @@ void Director::drawScene()
         //clear draw stats
         _renderer->clearDrawStats();
         
-        Camera* defaultCamera = nullptr;
-        const auto& cameras = _runningScene->_cameras;
-        //draw with camera
-        for (size_t i = 0; i < cameras.size(); i++)
-        {
-            Camera::_visitingCamera = cameras[i];
-            if (Camera::_visitingCamera->getCameraFlag() == CameraFlag::DEFAULT)
-            {
-                defaultCamera = Camera::_visitingCamera;
-                continue;
-            }
-            
-            pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
-            loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, Camera::_visitingCamera->getViewProjectionMatrix());
-            
-            //visit the scene
-            _runningScene->visit(_renderer, Mat4::IDENTITY, 0);
-            _renderer->render();
-            
-            popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
-        }
-        //draw with default camera
-        if (defaultCamera)
-        {
-            Camera::_visitingCamera = defaultCamera;
-            pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
-            loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, Camera::_visitingCamera->getViewProjectionMatrix());
-            
-            //visit the scene
-            _runningScene->visit(_renderer, Mat4::IDENTITY, 0);
-            _renderer->render();
-            
-            popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
-        }
-        Camera::_visitingCamera = nullptr;
+        //render the scene
+        _runningScene->render(_renderer);
         
         _eventDispatcher->dispatchEvent(_eventAfterVisit);
     }
@@ -1309,8 +1276,10 @@ void DisplayLinkDirector::startAnimation()
 
     _invalid = false;
 
+#ifndef WP8_SHADER_COMPILER
     Application::getInstance()->setAnimationInterval(_animationInterval);
-    
+#endif
+
     // fix issue #3509, skip one fps to avoid incorrect time calculation.
     setNextDeltaTimeZero(true);
 }
