@@ -54,6 +54,14 @@ void Device::setAccelerometerEnabled(bool isEnabled)
     static Windows::Foundation::EventRegistrationToken sToken;
     static bool sEnabled = false;
 
+    // we always need to reset the accelerometer
+    if (sAccelerometer)
+    {
+        sAccelerometer->ReadingChanged -= sToken;
+        sAccelerometer = nullptr;
+        sEnabled = false;
+    }
+
 	if (isEnabled)
 	{
         sAccelerometer = Accelerometer::GetDefault();
@@ -114,21 +122,13 @@ void Device::setAccelerometerEnabled(bool isEnabled)
                 break;
             }
 #endif
+
+#ifndef WP8_SHADER_COMPILER
 	        std::shared_ptr<cocos2d::InputEvent> event(new AccelerometerEvent(acc));
             cocos2d::GLViewImpl::sharedOpenGLView()->QueueEvent(event);
+#endif
 		});
 	}
-	else
-	{
-        if (sAccelerometer)
-        {
-            sAccelerometer->ReadingChanged -= sToken;
-            sAccelerometer = nullptr;
-        }
-
-        sEnabled = false;
-	}
-
 }
 
 void Device::setAccelerometerInterval(float interval)
