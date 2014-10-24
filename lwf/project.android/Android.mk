@@ -37,13 +37,24 @@ LOCAL_SRC_FILES := \
     core/lwf_text.cpp \
     core/lwf_utility.cpp \
     supports/lzma/Alloc.c \
-    supports/lzma/LzmaDec.c
+    supports/lzma/LzmaDec.c \
+    binding/lua/lwf_lua.cpp \
+    binding/lua/lwf_luabinding.cpp \
+    supports/luna-gen/luna.cpp
 COCOS_PATH=$(LOCAL_PATH)/../../cocos2d/cocos
+LOCAL_CFLAGS := -DLWF_USE_LUA
 LOCAL_C_INCLUDES := $(COCOS_PATH) \
 					$(COCOS_PATH)/platform/android \
+					$(COCOS_PATH)/../external/lua/lua \
 					$(LOCAL_PATH)/core \
                     $(LOCAL_PATH)/cocos2dx \
-                    $(LOCAL_PATH)/supports/lzma
+                    $(LOCAL_PATH)/supports/lzma \
+                    $(LOCAL_PATH)/supports/luna-gen
+LOCAL_EXPORT_CFLAGS := -DLWF_USE_LUA
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/core \
                            $(LOCAL_PATH)/cocos2dx
+LOCAL_WHOLE_STATIC_LIBRARIES := luajit_static
+
 include $(BUILD_STATIC_LIBRARY)
+
+$(call import-module,../../cocos2d/external/lua/luajit/prebuilt/android)

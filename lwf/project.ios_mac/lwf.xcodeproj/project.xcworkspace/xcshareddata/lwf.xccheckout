@@ -10,29 +10,29 @@
 	<string>lwf</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D849B9B6-7636-472B-B335-67FDA44A061E</key>
+		<key>E09B8859EC039A42A0A6B53E435D726A8A248883</key>
 		<string>ssh://github.com/splhack/Hello-LWF-Cocos2d-x.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>lwf/project.ios_mac/lwf.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D849B9B6-7636-472B-B335-67FDA44A061E</key>
+		<key>E09B8859EC039A42A0A6B53E435D726A8A248883</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/splhack/Hello-LWF-Cocos2d-x.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D849B9B6-7636-472B-B335-67FDA44A061E</string>
+	<string>E09B8859EC039A42A0A6B53E435D726A8A248883</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D849B9B6-7636-472B-B335-67FDA44A061E</string>
+			<string>E09B8859EC039A42A0A6B53E435D726A8A248883</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Hello-LWF-Cocos2d-x</string>
 		</dict>

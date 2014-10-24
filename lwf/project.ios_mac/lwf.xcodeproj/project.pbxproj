@@ -11,6 +11,14 @@
 		81010BFE19D24118002399B1 /* lwf_bitmapclip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81010BFB19D24118002399B1 /* lwf_bitmapclip.cpp */; };
 		81010BFF19D24118002399B1 /* lwf_bitmapclip.h in Headers */ = {isa = PBXBuildFile; fileRef = 81010BFC19D24118002399B1 /* lwf_bitmapclip.h */; };
 		819096E418E2259A003E0BB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819096E318E2259A003E0BB0 /* Foundation.framework */; };
+		81D2AF9B19F8BD1F00446439 /* lwf_lua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D2AF9819F8BD1F00446439 /* lwf_lua.cpp */; };
+		81D2AF9C19F8BD1F00446439 /* lwf_lua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D2AF9819F8BD1F00446439 /* lwf_lua.cpp */; };
+		81D2AF9D19F8BD1F00446439 /* lwf_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D2AF9919F8BD1F00446439 /* lwf_luabinding.cpp */; };
+		81D2AF9E19F8BD1F00446439 /* lwf_luabinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D2AF9919F8BD1F00446439 /* lwf_luabinding.cpp */; };
+		81D2AF9F19F8BD1F00446439 /* lwf_luabinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2AF9A19F8BD1F00446439 /* lwf_luabinding.h */; };
+		81D2AFA419F8BD2E00446439 /* luna.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D2AFA219F8BD2E00446439 /* luna.cpp */; };
+		81D2AFA519F8BD2E00446439 /* luna.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81D2AFA219F8BD2E00446439 /* luna.cpp */; };
+		81D2AFA619F8BD2E00446439 /* luna.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D2AFA319F8BD2E00446439 /* luna.h */; };
 		81F1DF7A18E22D9000FA78E5 /* lwf_cocos2dx.h in Headers */ = {isa = PBXBuildFile; fileRef = 81F1DF3318E22D9000FA78E5 /* lwf_cocos2dx.h */; };
 		81F1DF7B18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3418E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp */; };
 		81F1DF7C18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81F1DF3418E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp */; };
@@ -134,6 +142,11 @@
 		819096E318E2259A003E0BB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		819096F418E2259A003E0BB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8190970D18E2264A003E0BB0 /* liblwf Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblwf Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81D2AF9819F8BD1F00446439 /* lwf_lua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_lua.cpp; sourceTree = "<group>"; };
+		81D2AF9919F8BD1F00446439 /* lwf_luabinding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_luabinding.cpp; sourceTree = "<group>"; };
+		81D2AF9A19F8BD1F00446439 /* lwf_luabinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_luabinding.h; sourceTree = "<group>"; };
+		81D2AFA219F8BD2E00446439 /* luna.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luna.cpp; sourceTree = "<group>"; };
+		81D2AFA319F8BD2E00446439 /* luna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luna.h; sourceTree = "<group>"; };
 		81F1DF3318E22D9000FA78E5 /* lwf_cocos2dx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx.h; sourceTree = "<group>"; };
 		81F1DF3418E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lwf_cocos2dx_bitmap.cpp; sourceTree = "<group>"; };
 		81F1DF3518E22D9000FA78E5 /* lwf_cocos2dx_bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lwf_cocos2dx_bitmap.h; sourceTree = "<group>"; };
@@ -250,9 +263,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		81D2AF9519F8BD1F00446439 /* binding */ = {
+			isa = PBXGroup;
+			children = (
+				81D2AF9619F8BD1F00446439 /* lua */,
+			);
+			name = binding;
+			path = ../cplusplus/binding;
+			sourceTree = "<group>";
+		};
+		81D2AF9619F8BD1F00446439 /* lua */ = {
+			isa = PBXGroup;
+			children = (
+				81D2AF9819F8BD1F00446439 /* lwf_lua.cpp */,
+				81D2AF9919F8BD1F00446439 /* lwf_luabinding.cpp */,
+				81D2AF9A19F8BD1F00446439 /* lwf_luabinding.h */,
+			);
+			path = lua;
+			sourceTree = "<group>";
+		};
+		81D2AFA019F8BD2E00446439 /* luna-gen */ = {
+			isa = PBXGroup;
+			children = (
+				81D2AFA219F8BD2E00446439 /* luna.cpp */,
+				81D2AFA319F8BD2E00446439 /* luna.h */,
+			);
+			path = "luna-gen";
+			sourceTree = "<group>";
+		};
 		81F1DF3118E22D7600FA78E5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				81D2AF9519F8BD1F00446439 /* binding */,
 				81F1DF3218E22D9000FA78E5 /* cocos2dx */,
 				81F1DF4218E22D9000FA78E5 /* core */,
 				81F1DF7318E22D9000FA78E5 /* supports */,
@@ -344,6 +386,7 @@
 		81F1DF7318E22D9000FA78E5 /* supports */ = {
 			isa = PBXGroup;
 			children = (
+				81D2AFA019F8BD2E00446439 /* luna-gen */,
 				81F1DF7418E22D9000FA78E5 /* lzma */,
 			);
 			name = supports;
@@ -372,6 +415,7 @@
 				81F1DFAD18E22D9000FA78E5 /* lwf_eventmovie.h in Headers */,
 				81F1DFC718E22D9000FA78E5 /* lwf_object.h in Headers */,
 				81F1DFDE18E22D9000FA78E5 /* LzmaDec.h in Headers */,
+				81D2AF9F19F8BD1F00446439 /* lwf_luabinding.h in Headers */,
 				81F1DF8918E22D9000FA78E5 /* lwf_cocos2dx_resourcecache.h in Headers */,
 				81F1DFBB18E22D9000FA78E5 /* lwf_lwfcontainer.h in Headers */,
 				81F1DF9618E22D9000FA78E5 /* lwf_bitmap.h in Headers */,
@@ -387,6 +431,7 @@
 				81F1DF9318E22D9000FA78E5 /* lwf_animation.h in Headers */,
 				81F1DF9018E22D9000FA78E5 /* lwf.h in Headers */,
 				81F1DF9918E22D9000FA78E5 /* lwf_bitmapex.h in Headers */,
+				81D2AFA619F8BD2E00446439 /* luna.h in Headers */,
 				81F1DF8F18E22D9000FA78E5 /* lwf_cocos2dx_textttf.h in Headers */,
 				81F1DF9C18E22D9000FA78E5 /* lwf_button.h in Headers */,
 				81F1DF7D18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.h in Headers */,
@@ -481,12 +526,14 @@
 				81F1DFA718E22D9000FA78E5 /* lwf_event.cpp in Sources */,
 				81F1DF9218E22D9000FA78E5 /* lwf_animation.cpp in Sources */,
 				81F1DF7C18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */,
+				81D2AF9E19F8BD1F00446439 /* lwf_luabinding.cpp in Sources */,
 				81F1DFCC18E22D9000FA78E5 /* lwf_programobj.cpp in Sources */,
 				81F1DF8B18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp in Sources */,
 				81F1DFCF18E22D9000FA78E5 /* lwf_property.cpp in Sources */,
 				81F1DFDA18E22D9000FA78E5 /* Alloc.c in Sources */,
 				81010BFE19D24118002399B1 /* lwf_bitmapclip.cpp in Sources */,
 				81F1DF8518E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp in Sources */,
+				81D2AFA519F8BD2E00446439 /* luna.cpp in Sources */,
 				81F1DFAC18E22D9000FA78E5 /* lwf_eventmovie.cpp in Sources */,
 				81F1DF9F18E22D9000FA78E5 /* lwf_core.cpp in Sources */,
 				81F1DFA218E22D9000FA78E5 /* lwf_coredata.cpp in Sources */,
@@ -497,6 +544,7 @@
 				81F1DFBA18E22D9000FA78E5 /* lwf_lwfcontainer.cpp in Sources */,
 				81F1DFAF18E22D9000FA78E5 /* lwf_format.cpp in Sources */,
 				81F1DFBD18E22D9000FA78E5 /* lwf_movie.cpp in Sources */,
+				81D2AF9C19F8BD1F00446439 /* lwf_lua.cpp in Sources */,
 				81F1DFC218E22D9000FA78E5 /* lwf_movieop.cpp in Sources */,
 				81F1DFD318E22D9000FA78E5 /* lwf_text.cpp in Sources */,
 				81F1DFA418E22D9000FA78E5 /* lwf_data.cpp in Sources */,
@@ -523,12 +571,14 @@
 				81F1DFA618E22D9000FA78E5 /* lwf_event.cpp in Sources */,
 				81F1DF9118E22D9000FA78E5 /* lwf_animation.cpp in Sources */,
 				81F1DF7B18E22D9000FA78E5 /* lwf_cocos2dx_bitmap.cpp in Sources */,
+				81D2AF9D19F8BD1F00446439 /* lwf_luabinding.cpp in Sources */,
 				81F1DFCB18E22D9000FA78E5 /* lwf_programobj.cpp in Sources */,
 				81F1DF8A18E22D9000FA78E5 /* lwf_cocos2dx_textbmfont.cpp in Sources */,
 				81F1DFCE18E22D9000FA78E5 /* lwf_property.cpp in Sources */,
 				81F1DFD918E22D9000FA78E5 /* Alloc.c in Sources */,
 				81010BFD19D24118002399B1 /* lwf_bitmapclip.cpp in Sources */,
 				81F1DF8418E22D9000FA78E5 /* lwf_cocos2dx_particle.cpp in Sources */,
+				81D2AFA419F8BD2E00446439 /* luna.cpp in Sources */,
 				81F1DFAB18E22D9000FA78E5 /* lwf_eventmovie.cpp in Sources */,
 				81F1DF9E18E22D9000FA78E5 /* lwf_core.cpp in Sources */,
 				81F1DFA118E22D9000FA78E5 /* lwf_coredata.cpp in Sources */,
@@ -539,6 +589,7 @@
 				81F1DFB918E22D9000FA78E5 /* lwf_lwfcontainer.cpp in Sources */,
 				81F1DFAE18E22D9000FA78E5 /* lwf_format.cpp in Sources */,
 				81F1DFBC18E22D9000FA78E5 /* lwf_movie.cpp in Sources */,
+				81D2AF9B19F8BD1F00446439 /* lwf_lua.cpp in Sources */,
 				81F1DFC118E22D9000FA78E5 /* lwf_movieop.cpp in Sources */,
 				81F1DFD218E22D9000FA78E5 /* lwf_text.cpp in Sources */,
 				81F1DFA318E22D9000FA78E5 /* lwf_data.cpp in Sources */,
@@ -580,6 +631,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
+					LWF_USE_LUA,
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -592,7 +644,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos $(SRCROOT)/../../cocos2d/external/lua/lua";
 			};
 			name = Debug;
 		};
@@ -615,6 +667,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = LWF_USE_LUA;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -623,7 +676,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../cocos2d/cocos $(SRCROOT)/../../cocos2d/external/lua/lua";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

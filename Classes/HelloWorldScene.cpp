@@ -1,7 +1,30 @@
 #include "HelloWorldScene.h"
 #include "lwf_cocos2dx.h"
 
+extern "C" {
+#include "lua.h"
+#include "lualib.h"
+#include "lauxlib.h"
+}
+
 USING_NS_CC;
+
+static int luaA_log(lua_State *L)
+{
+    int n = lua_gettop(L);
+    for (int i = 1; i <= n; ++i) {
+        if (lua_isstring(L, i)) {
+            log("%s", lua_tostring(L, i));
+        } else if (lua_isnil(L, i)) {
+            log("nil");
+        } else if (lua_isboolean(L, i)) {
+            log(lua_toboolean(L, i) ? "true" : "false");
+        } else {
+            log("%s:%p", luaL_typename(L, i), lua_topointer(L, i));
+        }
+    }
+    return 0;
+}
 
 Scene* HelloWorld::createScene()
 {
@@ -73,13 +96,26 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
 
+    lua_State *L = luaL_newstate();
+    luaopen_base(L);
+    luaL_openlibs(L);
+    lua_register(L, "log", luaA_log);
+
+    static const char *table[] = {
+        "attachLWF/attachLWF.lua",
+        "cat/cat.lua",
+    };
+    for (size_t i = 0; i < sizeof(table) / sizeof(table[0]); ++i) {
+        long size;
+        auto luaPath = table[i];
+        auto buffer = (char *)FileUtils::getInstance()->getFileData(luaPath, "r", &size);
+        luaL_loadbuffer(L, buffer, size, luaPath);
+        lua_pcall(L, 0, 0, 0);
+    }
+
     // add a lwf
-	const char *path = "sample3_max_optimized/sample3_max_optimized.lwf";
-	//const char *path = "mask/mask.lwf";
-    auto lwfNode = LWFNode::create(path);
-	lwfNode->lwf->AddEventHandler("done", [=](LWF::Movie *, LWF::Button *){
-		lwfNode->lwf->GotoAndPlayMovie("_root", 1);
-	});
+	const char *path = "attachLWF/attachLWF.lwf";
+    auto lwfNode = LWFNode::create(path, L);
     lwfNode->setPosition(origin);
     lwfNode->lwf->FitForHeight(visibleSize.width, visibleSize.height);
     this->addChild(lwfNode);
