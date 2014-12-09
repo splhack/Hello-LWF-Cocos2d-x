@@ -178,6 +178,10 @@
     return [FBSettings sdkVersion];
 }
 
+- (void) setSDKVersion: (NSString *)sdkVersion{
+     [FBSettings setsdkVersion:sdkVersion];
+}
+
 - (NSString*) getPluginVersion
 {
     return @"0.2.0";
@@ -213,7 +217,11 @@
         if (place) {
             params.ref = ref;
         }
-        
+        NSString *to = [shareInfo objectForKey:@"to"];
+        if(to){
+            NSArray *friends = [to componentsSeparatedByString:@","];
+            params.friends = friends;
+        }
         if ([dialog_type isEqualToString:@"shareLink"]) {
             // If the Facebook app is installed and we can present the share dialog
             if ([FBDialogs canPresentShareDialogWithParams:params]) {
