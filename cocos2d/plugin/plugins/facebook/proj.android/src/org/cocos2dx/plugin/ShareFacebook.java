@@ -28,6 +28,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import org.json.JSONException;
@@ -55,6 +56,7 @@ import com.facebook.widget.WebDialog;
 import com.facebook.widget.WebDialog.FeedDialogBuilder;
 import com.facebook.widget.WebDialog.OnCompleteListener;
 import com.facebook.widget.WebDialog.RequestsDialogBuilder;
+import com.facebook.Settings;
 
 public class ShareFacebook implements InterfaceShare{
 
@@ -115,14 +117,18 @@ public class ShareFacebook implements InterfaceShare{
 	}
 
 	@Override
-	public String getSDKVersion() {
-		return "3.14.1";
-	}
-
-	@Override
 	public String getPluginVersion() {
 		return "0.2.0";
 	}
+
+	@Override
+	public String getSDKVersion() {
+		return Settings.getSDKVersion();
+	}
+
+	public void setSDKVersion(String version){
+        Settings.setSDKVersion(version);
+    }
 
 	private boolean networkReachable() {
 		boolean bRet = false;
@@ -380,6 +386,26 @@ public class ShareFacebook implements InterfaceShare{
 		String picture = null;
 		if ((picture = safeGetJsonString(info, "picture")) != null)
 			shareDialogBuilder.setPicture(picture);
+		
+		String friendStr = null;
+		if ((friendStr = safeGetJsonString(info, "to")) != null)
+		{
+			String []arr = friendStr.split(",");
+			List<String> list=Arrays.asList(arr); 
+			shareDialogBuilder.setFriends(list);
+		}
+		
+		String place = null;
+		if ((place = safeGetJsonString(info, "place")) != null)
+		{
+			shareDialogBuilder.setPlace(place);
+		}
+		
+		String ref = null;
+		if ((ref = safeGetJsonString(info, "reference")) != null)
+		{
+			shareDialogBuilder.setRef(ref);
+		}
 		
 		FacebookWrapper.track(shareDialogBuilder.build().present());
 	}
