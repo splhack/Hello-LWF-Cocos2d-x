@@ -323,7 +323,7 @@ void LWF::DestroyLua()
 	lua_remove(l, -2);
 	/* -1: function or nil: LWF.Script.<name>.Destroy */
 	if (lua_isfunction(l, -1)) {
-		Luna<LWF::LWF>::push(l, this, false);
+		Luna<LWF>::push(l, this, false);
 		/* -2: LWF.Script.<name>.Destroy */
 		/* -1: LWF instance */
 		CallLua(1);

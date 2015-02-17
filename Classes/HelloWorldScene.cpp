@@ -106,10 +106,9 @@ bool HelloWorld::init()
         "cat/cat.lua",
     };
     for (size_t i = 0; i < sizeof(table) / sizeof(table[0]); ++i) {
-        long size;
         auto luaPath = table[i];
-        auto buffer = (char *)FileUtils::getInstance()->getFileData(luaPath, "r", &size);
-        luaL_loadbuffer(L, buffer, size, luaPath);
+		auto data = FileUtils::getInstance()->getDataFromFile(luaPath);
+        luaL_loadbuffer(L, (const char *)data.getBytes(), data.getSize(), luaPath);
         lua_pcall(L, 0, 0, 0);
     }
 
