@@ -30,11 +30,24 @@ NS_CC_BEGIN
 
 Camera* Camera::_visitingCamera = nullptr;
 
-Camera* Camera::create()
+
+Camera* Camera::getDefaultCamera()
+{
+    auto scene = Director::getInstance()->getRunningScene();
+    if(scene)
+    {
+        return scene->getDefaultCamera();
+    }
+
+    return nullptr;
+}
+
+    Camera* Camera::create()
 {
     Camera* camera = new (std::nothrow) Camera();
     camera->initDefault();
     camera->autorelease();
+    camera->setDepth(0.f);
     
     return camera;
 }
@@ -69,20 +82,15 @@ Camera::Camera()
 : _scene(nullptr)
 , _viewProjectionDirty(true)
 , _cameraFlag(1)
+, _frustumDirty(true)
+, _depth(-1)
 {
-    
+    _frustum.setClipZ(true);
 }
 
 Camera::~Camera()
 {
     
-}
-
-void Camera::setPosition3D(const Vec3& position)
-{
-    Node::setPosition3D(position);
-    
-    _transformUpdated = _transformDirty = _inverseDirty = true;
 }
 
 const Mat4& Camera::getProjectionMatrix() const
@@ -96,6 +104,7 @@ const Mat4& Camera::getViewMatrix() const
     if (memcmp(viewInv.m, _viewInv.m, count) != 0)
     {
         _viewProjectionDirty = true;
+        _frustumDirty = true;
         _viewInv = viewInv;
         _view = viewInv.getInversed();
     }
@@ -205,6 +214,7 @@ bool Camera::initPerspective(float fieldOfView, float aspectRatio, float nearPla
     }
 #endif
     _viewProjectionDirty = true;
+    _frustumDirty = true;
     
     return true;
 }
@@ -225,13 +235,52 @@ bool Camera::initOrthographic(float zoomX, float zoomY, float nearPlane, float f
     }
 #endif
     _viewProjectionDirty = true;
+    _frustumDirty = true;
     
     return true;
 }
 
-void Camera::unproject(const Size& viewport, Vec3* src, Vec3* dst) const
+Vec2 Camera::project(const Vec3& src) const
 {
-    assert(dst);
+    Vec2 screenPos;
+    
+    auto viewport = Director::getInstance()->getWinSize();
+    Vec4 clipPos;
+    getViewProjectionMatrix().transformVector(Vec4(src.x, src.y, src.z, 1.0f), &clipPos);
+    
+    CCASSERT(clipPos.w != 0.0f, "");
+    float ndcX = clipPos.x / clipPos.w;
+    float ndcY = clipPos.y / clipPos.w;
+    
+    screenPos.x = (ndcX + 1.0f) * 0.5f * viewport.width;
+    screenPos.y = (1.0f - (ndcY + 1.0f) * 0.5f) * viewport.height;
+    return screenPos;
+}
+
+Vec3 Camera::unproject(const Vec3& src) const
+{
+    auto viewport = Director::getInstance()->getWinSize();
+
+    Vec4 screen(src.x / viewport.width, ((viewport.height - src.y)) / viewport.height, src.z, 1.0f);
+    screen.x = screen.x * 2.0f - 1.0f;
+    screen.y = screen.y * 2.0f - 1.0f;
+    screen.z = screen.z * 2.0f - 1.0f;
+    
+    getViewProjectionMatrix().getInversed().transformVector(screen, &screen);
+    if (screen.w != 0.0f)
+    {
+        screen.x /= screen.w;
+        screen.y /= screen.w;
+        screen.z /= screen.w;
+    }
+    
+    return Vec3(screen.x, screen.y, screen.z);
+}
+
+void Camera::unproject(const Size& viewport, const Vec3* src, Vec3* dst) const
+{
+    CCASSERT(src && dst, "vec3 can not be null");
+    
     Vec4 screen(src->x / viewport.width, ((viewport.height - src->y)) / viewport.height, src->z, 1.0f);
     screen.x = screen.x * 2.0f - 1.0f;
     screen.y = screen.y * 2.0f - 1.0f;
@@ -248,13 +297,46 @@ void Camera::unproject(const Size& viewport, Vec3* src, Vec3* dst) const
     dst->set(screen.x, screen.y, screen.z);
 }
 
+bool Camera::isVisibleInFrustum(const AABB* aabb) const
+{
+    if (_frustumDirty)
+    {
+        _frustum.initFrustum(this);
+        _frustumDirty = false;
+    }
+    return !_frustum.isOutOfFrustum(*aabb);
+}
+
+float Camera::getDepthInView(const Mat4& transform) const
+{
+    Mat4 camWorldMat = getNodeToWorldTransform();
+    const Mat4 &viewMat = camWorldMat.getInversed();
+    float depth = -(viewMat.m[2] * transform.m[12] + viewMat.m[6] * transform.m[13] + viewMat.m[10] * transform.m[14] + viewMat.m[14]);
+    return depth;
+}
+
+void Camera::setDepth(int depth)
+{
+    if (_depth != depth)
+    {
+        _depth = depth;
+        if (_scene)
+        {
+            //notify scene that the camera order is dirty
+            _scene->setCameraOrderDirty();
+        }
+    }
+}
+
 void Camera::onEnter()
 {
     if (_scene == nullptr)
     {
         auto scene = getScene();
         if (scene)
+        {
             setScene(scene);
+        }
     }
     Node::onEnter();
 }
@@ -286,7 +368,11 @@ void Camera::setScene(Scene* scene)
             auto& cameras = _scene->_cameras;
             auto it = std::find(cameras.begin(), cameras.end(), this);
             if (it == cameras.end())
+            {
                 _scene->_cameras.push_back(this);
+                //notify scene that the camera order is dirty
+                _scene->setCameraOrderDirty();
+            }
         }
     }
 }
